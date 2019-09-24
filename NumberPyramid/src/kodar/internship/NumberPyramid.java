@@ -1,16 +1,25 @@
 package kodar.internship;
 
 
+import java.util.Scanner;
+
 public class NumberPyramid {
-    private static final int rows = 9;
-    private int columns = 17;
     public void createPyramid () {
+        System.out.println("Enter number of rows");
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        if (rows >9 ){
+            System.out.println("Invalid number of rows");
+            rows =0;
+            createPyramid();
+        }
+        int columns = (rows*2)-1;
         for (int i = rows;i > 0; i--) {
-                printNumbers(i, columns);
+                printNumbers(rows,i, columns);
         }
     }
 
-    private  void printNumbers (int row,int column){
+    private  void printNumbers (int rows, int row,int column){
         int row2 = row;
         while(rows > row){
             printSpace();
@@ -31,7 +40,6 @@ public class NumberPyramid {
 
     private void printNumber (int column){
         int middleColumn = (column/2) +1;
-
 
         int counter = 1;
         while(counter < middleColumn) {
