@@ -1,4 +1,6 @@
 package business.converter.usergroupstatus;
 
-public class UserGroupStatusParam {
+import business.converter.BaseNamedParam;
+
+public class UserGroupStatusParam  extends BaseNamedParam {
 }

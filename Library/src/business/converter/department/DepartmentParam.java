@@ -1,4 +1,6 @@
 package business.converter.department;
 
-public class DepartmentParam {
+import business.converter.BaseNamedParam;
+
+public class DepartmentParam  extends BaseNamedParam {
 }

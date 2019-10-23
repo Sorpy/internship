@@ -1,4 +1,6 @@
 package business.converter.departmentstatus;
 
-public class DepartmentStatusResult {
+import business.converter.BaseNamedResult;
+
+public class DepartmentStatusResult  extends BaseNamedResult {
 }

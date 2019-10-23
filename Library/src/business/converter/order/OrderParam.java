@@ -1,4 +1,6 @@
 package business.converter.order;
 
-public class OrderParam {
+import business.converter.BaseNamedParam;
+
+public class OrderParam  extends BaseNamedParam {
 }

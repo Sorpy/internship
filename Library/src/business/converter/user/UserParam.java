@@ -1,4 +1,6 @@
 package business.converter.user;
 
-public class UserParam {
+import business.converter.BaseParam;
+
+public class UserParam extends BaseParam {
 }

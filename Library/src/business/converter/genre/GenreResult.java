@@ -1,4 +1,6 @@
 package business.converter.genre;
 
-public class GenreResult {
+import business.converter.BaseNamedResult;
+
+public class GenreResult extends BaseNamedResult {
 }

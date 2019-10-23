@@ -1,4 +1,6 @@
 package business.converter.book;
 
-public class BookParam {
+import business.converter.BaseNamedParam;
+
+public class BookParam  extends BaseNamedParam {
 }

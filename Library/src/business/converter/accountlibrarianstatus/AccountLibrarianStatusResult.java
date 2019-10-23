@@ -1,4 +1,6 @@
 package business.converter.accountlibrarianstatus;
 
-public class AccountLibrarianStatusResult {
+import business.converter.BaseNamedResult;
+
+public class AccountLibrarianStatusResult  extends BaseNamedResult {
 }

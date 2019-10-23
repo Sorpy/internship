@@ -1,4 +1,6 @@
 package business.converter.usersusergroup;
 
-public class UsersUserGroupParam {
+import business.converter.BaseNamedParam;
+
+public class UsersUserGroupParam  extends BaseNamedParam {
 }

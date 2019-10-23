@@ -1,15 +1,22 @@
 package business.converter.accountlibrarianstatus;
 
+import data.entity.AccountLibrarianStatus;
+import dataaccess.dao.accountlibrarianstatusdao.AccountLibrarianStatusDao;
 import dataaccess.dao.accountlibrarianstatusdao.AccountLibrarianStatusDaoImpl;
 
 public class AccountLibrarianStatusParamConverterImpl implements AccountLibrarianStatusParamConverter{
-    private AccountLibrarianStatusDaoImpl accountLibrarianStatusDao;
+    private AccountLibrarianStatusDao accountLibrarianStatusDao;
 
-    public AccountLibrarianStatusDaoImpl getAccountLibrarianStatusDao() {
+    public AccountLibrarianStatusDao getAccountLibrarianStatusDao() {
         return accountLibrarianStatusDao;
     }
 
-    public void setAccountLibrarianStatusDao(AccountLibrarianStatusDaoImpl accountLibrarianStatusDao) {
+    public void setAccountLibrarianStatusDao(AccountLibrarianStatusDao accountLibrarianStatusDao) {
         this.accountLibrarianStatusDao = accountLibrarianStatusDao;
+    }
+
+    @Override
+    public AccountLibrarianStatus convert(AccountLibrarianStatusParam param) {
+        return null;
     }
 }

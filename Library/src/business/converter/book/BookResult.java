@@ -1,4 +1,6 @@
 package business.converter.book;
 
-public class BookResult {
+import business.converter.BaseNamedResult;
+
+public class BookResult extends BaseNamedResult {
 }

@@ -1,4 +1,4 @@
 package data.entity;
 
-public class Ganre {
+public class Genre {
 }

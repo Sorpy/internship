@@ -1,15 +1,22 @@
 package business.converter.userstatus;
 
+import data.entity.UserStatus;
+import dataaccess.dao.userstatusdao.UserStatusDao;
 import dataaccess.dao.userstatusdao.UserStatusDaoImpl;
 
 public class UserStatusParamConverterImpl implements UserStatusParamConverter {
-    private UserStatusDaoImpl userStatusDao;
+    private UserStatusDao userStatusDao;
 
-    public UserStatusDaoImpl getUserStatusDao() {
+    public UserStatusDao getUserStatusDao() {
         return userStatusDao;
     }
 
-    public void setUserStatusDao(UserStatusDaoImpl userStatusDao) {
+    public void setUserStatusDao(UserStatusDao userStatusDao) {
         this.userStatusDao = userStatusDao;
+    }
+
+    @Override
+    public UserStatus convert(UserStatusParam param) {
+        return null;
     }
 }

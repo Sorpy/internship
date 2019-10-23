@@ -1,4 +1,6 @@
 package business.converter.department;
 
-public class DepartmentResult {
+import business.converter.BaseNamedResult;
+
+public class DepartmentResult extends BaseNamedResult {
 }

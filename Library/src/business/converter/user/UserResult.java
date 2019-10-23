@@ -1,4 +1,6 @@
 package business.converter.user;
 
-public class UserResult {
+import business.converter.BaseResult;
+
+public class UserResult extends BaseResult {
 }

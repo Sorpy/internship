@@ -3,7 +3,7 @@ package data.entity;
 public class Book extends NamedPersistent {
     private String bookName;
     private Author author;
-    private Ganre ganre;
+    private Genre genre;
     private Department department;
     private int year;
     private double price;
@@ -25,12 +25,12 @@ public class Book extends NamedPersistent {
         this.author = author;
     }
 
-    public Ganre getGanre() {
-        return ganre;
+    public Genre getGenre() {
+        return genre;
     }
 
-    public void setGanre(Ganre ganre) {
-        this.ganre = ganre;
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
     public Department getDepartment() {

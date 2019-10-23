@@ -1,4 +1,6 @@
 package business.converter.genre;
 
-public class GenreParam {
+import business.converter.BaseNamedParam;
+
+public class GenreParam  extends BaseNamedParam {
 }

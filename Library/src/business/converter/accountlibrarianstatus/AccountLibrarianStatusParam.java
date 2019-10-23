@@ -1,4 +1,6 @@
 package business.converter.accountlibrarianstatus;
 
-public class AccountLibrarianStatusParam {
+import business.converter.BaseNamedParam;
+
+public class AccountLibrarianStatusParam  extends BaseNamedParam {
 }

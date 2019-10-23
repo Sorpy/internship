@@ -1,4 +1,6 @@
 package business.converter.order;
 
-public class OrderResult {
+import business.converter.BaseNamedResult;
+
+public class OrderResult extends BaseNamedResult {
 }

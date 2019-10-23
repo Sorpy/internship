@@ -1,4 +1,6 @@
 package business.converter.usergroupstatus;
 
-public class UserGroupStatusResult {
+import business.converter.BaseNamedResult;
+
+public class UserGroupStatusResult extends BaseNamedResult {
 }

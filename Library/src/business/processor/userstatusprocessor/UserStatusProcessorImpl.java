@@ -1,35 +1,77 @@
 package business.processor.userstatusprocessor;
 
-import business.converter.userstatus.UserStatusParamConverterImpl;
-import business.converter.userstatus.UserStatusResultConverterImpl;
+import business.converter.userstatus.*;
+import dataaccess.dao.userstatusdao.UserStatusDao;
 import dataaccess.dao.userstatusdao.UserStatusDaoImpl;
 
-public class UserStatusProcessorImpl implements UserStatusProcessor{
-    private UserStatusDaoImpl userStatusDao;
-    private UserStatusParamConverterImpl userStatusParamConverter;
-    private UserStatusResultConverterImpl userStatusResultConverter;
+import java.util.List;
 
-    public UserStatusDaoImpl getUserStatusDao() {
+public class UserStatusProcessorImpl implements UserStatusProcessor{
+    private UserStatusDao userStatusDao;
+    private UserStatusParamConverter userStatusParamConverter;
+    private UserStatusResultConverter userStatusResultConverter;
+
+    public UserStatusDao getUserStatusDao() {
         return userStatusDao;
     }
 
-    public void setUserStatusDao(UserStatusDaoImpl userStatusDao) {
+    public void setUserStatusDao(UserStatusDao userStatusDao) {
         this.userStatusDao = userStatusDao;
     }
 
-    public UserStatusParamConverterImpl getUserStatusParamConverter() {
+    public UserStatusParamConverter getUserStatusParamConverter() {
         return userStatusParamConverter;
     }
 
-    public void setUserStatusParamConverter(UserStatusParamConverterImpl userStatusParamConverter) {
+    public void setUserStatusParamConverter(UserStatusParamConverter userStatusParamConverter) {
         this.userStatusParamConverter = userStatusParamConverter;
     }
 
-    public UserStatusResultConverterImpl getUserStatusResultConverter() {
+    public UserStatusResultConverter getUserStatusResultConverter() {
         return userStatusResultConverter;
     }
 
-    public void setUserStatusResultConverter(UserStatusResultConverterImpl userStatusResultConverter) {
+    public void setUserStatusResultConverter(UserStatusResultConverter userStatusResultConverter) {
         this.userStatusResultConverter = userStatusResultConverter;
+    }
+
+    @Override
+    public UserStatusResult create(UserStatusParam param) {
+        return null;
+    }
+
+    @Override
+    public List<UserStatusResult> create(List<UserStatusParam> param) {
+        return null;
+    }
+
+    @Override
+    public void update(long id, UserStatusParam param) {
+
+    }
+
+    @Override
+    public void update(List<UserStatusParam> param) {
+
+    }
+
+    @Override
+    public void delete(long id) {
+
+    }
+
+    @Override
+    public void delete(List<Long> idList) {
+
+    }
+
+    @Override
+    public UserStatusResult find(long id) {
+        return null;
+    }
+
+    @Override
+    public List<UserStatusResult> find() {
+        return null;
     }
 }

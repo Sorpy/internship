@@ -5,6 +5,12 @@ public class User extends Persistent {
     private String password;
     private UserStatus userStatus;
 
+    public User(String username, String password, UserStatus userStatus) {
+        this.username = username;
+        this.password = password;
+        this.userStatus = userStatus;
+    }
+
     public String getUsername() {
         return username;
     }

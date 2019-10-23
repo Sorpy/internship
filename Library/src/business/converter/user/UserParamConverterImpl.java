@@ -1,15 +1,20 @@
 package business.converter.user;
 
-import dataaccess.dao.userdao.UserDaoImpl;
+import dataaccess.dao.userdao.UserDao;
 
 public class UserParamConverterImpl implements UserParamConverter {
-    private UserDaoImpl userDao;
+    private UserDao userDao;
 
-    public UserDaoImpl getUserDao() {
+    public UserDao getUserDao() {
         return userDao;
     }
 
-    public void setUserDao(UserDaoImpl userDao) {
+    public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
+    }
+
+    @Override
+    public data.entity.User convert(UserParam param) {
+        return null;
     }
 }

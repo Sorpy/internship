@@ -1,35 +1,77 @@
 package business.processor.usersusergroupprocessor;
 
-import business.converter.usersusergroup.UsersUserGroupParamConverterImpl;
-import business.converter.usersusergroup.UsersUserGroupResultConverterImpl;
+import business.converter.usersusergroup.*;
+import dataaccess.dao.usersusergroupdao.UsersUserGroupDao;
 import dataaccess.dao.usersusergroupdao.UsersUserGroupDaoImpl;
 
-public class UsersUserGroupProcessorImpl implements UsersUserGroupProcessor{
-    private UsersUserGroupDaoImpl usersUserGroupDao;
-    private UsersUserGroupParamConverterImpl usersUserGroupParamConverter;
-    private UsersUserGroupResultConverterImpl usersUserGroupResultConverter;
+import java.util.List;
 
-    public UsersUserGroupDaoImpl getUsersUserGroupDao() {
+public class UsersUserGroupProcessorImpl implements UsersUserGroupProcessor{
+    private UsersUserGroupDao usersUserGroupDao;
+    private UsersUserGroupParamConverter usersUserGroupParamConverter;
+    private UsersUserGroupResultConverter usersUserGroupResultConverter;
+
+    public UsersUserGroupDao getUsersUserGroupDao() {
         return usersUserGroupDao;
     }
 
-    public void setUsersUserGroupDao(UsersUserGroupDaoImpl usersUserGroupDao) {
+    public void setUsersUserGroupDao(UsersUserGroupDao usersUserGroupDao) {
         this.usersUserGroupDao = usersUserGroupDao;
     }
 
-    public UsersUserGroupParamConverterImpl getUsersUserGroupParamConverter() {
+    public UsersUserGroupParamConverter getUsersUserGroupParamConverter() {
         return usersUserGroupParamConverter;
     }
 
-    public void setUsersUserGroupParamConverter(UsersUserGroupParamConverterImpl usersUserGroupParamConverter) {
+    public void setUsersUserGroupParamConverter(UsersUserGroupParamConverter usersUserGroupParamConverter) {
         this.usersUserGroupParamConverter = usersUserGroupParamConverter;
     }
 
-    public UsersUserGroupResultConverterImpl getUsersUserGroupResultConverter() {
+    public UsersUserGroupResultConverter getUsersUserGroupResultConverter() {
         return usersUserGroupResultConverter;
     }
 
-    public void setUsersUserGroupResultConverter(UsersUserGroupResultConverterImpl usersUserGroupResultConverter) {
+    public void setUsersUserGroupResultConverter(UsersUserGroupResultConverter usersUserGroupResultConverter) {
         this.usersUserGroupResultConverter = usersUserGroupResultConverter;
+    }
+
+    @Override
+    public UsersUserGroupResult create(UsersUserGroupParam param) {
+        return null;
+    }
+
+    @Override
+    public List<UsersUserGroupResult> create(List<UsersUserGroupParam> param) {
+        return null;
+    }
+
+    @Override
+    public void update(long id, UsersUserGroupParam param) {
+
+    }
+
+    @Override
+    public void update(List<UsersUserGroupParam> param) {
+
+    }
+
+    @Override
+    public void delete(long id) {
+
+    }
+
+    @Override
+    public void delete(List<Long> idList) {
+
+    }
+
+    @Override
+    public UsersUserGroupResult find(long id) {
+        return null;
+    }
+
+    @Override
+    public List<UsersUserGroupResult> find() {
+        return null;
     }
 }
