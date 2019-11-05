@@ -11,11 +11,11 @@ public interface AccountClientStatusDao {
     AccountClientStatus update(AccountClientStatus entity);
     List<AccountClientStatus> update(List<AccountClientStatus> entity);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(AccountClientStatus entity);
     void delete(List<Long> idList);
 
     List<AccountClientStatus> find();
-    AccountClientStatus find(long id);
+    AccountClientStatus find(Long id);
 
 }

@@ -1,4 +1,4 @@
 package data.entity;
 
-public class Department {
+public class Department extends NamedPersistent{
 }

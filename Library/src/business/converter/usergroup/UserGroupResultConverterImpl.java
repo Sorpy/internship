@@ -5,6 +5,9 @@ import data.entity.UserGroup;
 public class UserGroupResultConverterImpl implements UserGroupResultConverter{
     @Override
     public UserGroupResult convert(UserGroup param) {
-        return null;
+        UserGroupResult userGroupResult = new UserGroupResult();
+        userGroupResult.setUserGroupStatus(param.getUserGroupStatus());
+        userGroupResult.setID(param.getID());
+        return userGroupResult;
     }
 }

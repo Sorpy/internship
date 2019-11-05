@@ -11,10 +11,11 @@ public interface AccountLibrarianDao {
     AccountLibrarian update(AccountLibrarian entity);
     List<AccountLibrarian> update(List<AccountLibrarian> entity);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(AccountLibrarian entity);
     void delete(List<Long> idList);
 
     List<AccountLibrarian> find();
-    AccountLibrarian find(long id);
+    AccountLibrarian find(Long id);
+    List<AccountLibrarian> find(String name);
 }

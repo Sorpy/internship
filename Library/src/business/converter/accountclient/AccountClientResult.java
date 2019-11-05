@@ -14,24 +14,42 @@ public class AccountClientResult  extends BaseNamedResult {
     private String country;
     private String phone;
     private String email;
-    private User user;
-    private AccountClientStatus accountClientStatus;
+    private String username;
+    private String accountClientStatusName;
+    private Long userId;
+    private Long accountClientStatusId;
 
 
-    public AccountClientStatus getAccountClientStatus() {
-        return accountClientStatus;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAccountClientStatus(AccountClientStatus accountClientStatus) {
-        this.accountClientStatus = accountClientStatus;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public User getUser() {
-        return user;
+    public String getAccountClientStatusName() {
+        return accountClientStatusName;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setAccountClientStatusName(String accountClientStatusName) {
+        this.accountClientStatusName = accountClientStatusName;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getAccountClientStatusId() {
+        return accountClientStatusId;
+    }
+
+    public void setAccountClientStatusId(Long accountClientStatusId) {
+        this.accountClientStatusId = accountClientStatusId;
     }
 
     public String getFirstName() {

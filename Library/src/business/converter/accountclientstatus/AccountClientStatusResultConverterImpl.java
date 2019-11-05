@@ -6,7 +6,6 @@ public class AccountClientStatusResultConverterImpl implements AccountClientStat
     @Override
     public AccountClientStatusResult convert(AccountClientStatus param) {
         AccountClientStatusResult accountClientStatusResult = new AccountClientStatusResult();
-        accountClientStatusResult.setStatus(param.getStatus());
         accountClientStatusResult.setCode(param.getCode());
         accountClientStatusResult.setDescription(param.getDescription());
         accountClientStatusResult.setID(param.getID());

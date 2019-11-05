@@ -4,20 +4,28 @@ import data.entity.Genre;
 
 import java.util.List;
 
+import static dataaccess.dao.genredao.GenreData.*;
+
 public class GenreDaoImpl implements GenreDao {
     @Override
     public Genre save(Genre entity) {
-        return null;
+        genreMap.putIfAbsent(entity.getID(), entity);
+        genres.add(entity);
+
+        return entity;
     }
 
     @Override
-    public List<Genre> save(List<Genre> entity) {
-        return null;
+    public List<Genre> save (List<Genre> entity) {
+        genres.addAll(entity);
+        return entity;
     }
 
     @Override
     public Genre update(Genre entity) {
-        return null;
+        delete(entity.getID());
+        genres.add(entity);
+        return entity;
     }
 
     @Override
@@ -26,27 +34,31 @@ public class GenreDaoImpl implements GenreDao {
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        Genre removeEntity = find(id);
+        delete(removeEntity);
     }
 
     @Override
     public void delete(Genre entity) {
-
+        genres.remove(entity);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        idList.forEach(this::delete);
     }
 
     @Override
     public List<Genre> find() {
-        return null;
+        return genres;
     }
 
     @Override
-    public Genre find(long id) {
-        return null;
+    public Genre find(Long id) {
+        return genres
+                .stream()
+                .filter(a -> a.getID().equals(id))
+                .findFirst().get();
     }
 }

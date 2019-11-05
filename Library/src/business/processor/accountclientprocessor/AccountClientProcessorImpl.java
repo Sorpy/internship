@@ -1,11 +1,12 @@
 package business.processor.accountclientprocessor;
 
 import business.converter.accountclient.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import data.entity.AccountClient;
 import dataaccess.dao.accountclientdao.AccountClientDao;
 import dataaccess.dao.accountclientdao.AccountClientDaoImpl;
 
+import java.beans.IntrospectionException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,54 +16,52 @@ public class AccountClientProcessorImpl implements AccountClientProcessor{
     private AccountClientParamConverter accountClientParamConverter = new AccountClientParamConverterImpl();
     private AccountClientResultConverter accountClientResultConverter = new AccountClientResultConverterImpl();
 
-    public AccountClientDao getAccountClientDao() {
-        return accountClientDao;
-    }
 
-    public void setAccountClientDao(AccountClientDao accountClientDao) {
-        this.accountClientDao = accountClientDao;
-    }
-
-    public AccountClientParamConverter getAccountClientParamConverter() {
-        return accountClientParamConverter;
-    }
-
-    public void setAccountClientParamConverter(AccountClientParamConverter accountClientParamConverter) {
-        this.accountClientParamConverter = accountClientParamConverter;
-    }
-
-    public AccountClientResultConverter getAccountClientResultConverter() {
-        return accountClientResultConverter;
-    }
-
-    public void setAccountClientResultConverter(AccountClientResultConverter accountClientResultConverter) {
-        this.accountClientResultConverter = accountClientResultConverter;
+    @Override
+    public AccountClientResult create(AccountClientParam param) throws IllegalAccessException {
+        //try {
+           // if (find(param.getID()).getID() == param.getID()) throw new ExistingIDException("Element with this ID already exists");
+        //} catch (NoSuchElementException ignored){ }
+        return accountClientResultConverter
+                .convert(accountClientDao
+                        .save(accountClientParamConverter
+                                .convert(param,null)));
     }
 
     @Override
-    public AccountClientResult create(AccountClientParam param){
-        return accountClientResultConverter.convert(accountClientDao.save(accountClientParamConverter.convert(param)));
-    }
-
-    @Override
-    public List<AccountClientResult> create(List<AccountClientParam> param) throws JsonProcessingException {
+    public List<AccountClientResult> create(List<AccountClientParam> param)  {
         List<AccountClient> accountClients = new ArrayList<>();
         List<AccountClientResult> accountClientsResult = new ArrayList<>();
 
-        param.forEach(account -> accountClients.add(accountClientParamConverter.convert(account)));
+
+        param.forEach
+                (account -> accountClients
+                        .add(accountClientParamConverter
+                                .convert(account,null)));
         accountClientDao.save(accountClients);
-        accountClients.forEach(clients -> accountClientsResult.add(accountClientResultConverter.convert(clients)));
+        accountClients.forEach
+                (clients -> {
+                    try {
+                        accountClientsResult
+                                .add(accountClientResultConverter
+                                        .convert(clients));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                });
 
         return accountClientsResult;
     }
 
     @Override
-    public void update(long id, AccountClientParam param) {
+    public void update(Long id, AccountClientParam param) {
         AccountClient oldEntity = accountClientDao.find(id);
         if (oldEntity!=null){
-            accountClientDao.delete(id);
-            accountClientDao.update(accountClientParamConverter.convert(param,oldEntity));
-        }else System.out.println("No entity with id " + id + " found");
+            accountClientDao.update
+                    (accountClientParamConverter.convert
+                            (param,oldEntity));
+        }else
+            System.out.println("No entity with id " + id + " found");
     }
 
     @Override
@@ -71,7 +70,7 @@ public class AccountClientProcessorImpl implements AccountClientProcessor{
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         accountClientDao.delete(id);
     }
 
@@ -81,20 +80,57 @@ public class AccountClientProcessorImpl implements AccountClientProcessor{
     }
 
     @Override
-    public AccountClientResult find(long id) {
-        return accountClientResultConverter.convert(accountClientDao.find(id));
+    public AccountClientResult find(Long id) throws IllegalAccessException {
+        return accountClientResultConverter
+                .convert(accountClientDao.find(id));
     }
 
     @Override
     public List<AccountClientResult> find(){
         List<AccountClientResult> accountClientsResult = new ArrayList<>();
-        accountClientDao.find().forEach(accountClient -> accountClientsResult.add(accountClientResultConverter.convert(accountClient)));
+        accountClientDao.find()
+                .forEach(accountClient -> {
+                    try {
+                        accountClientsResult
+                                .add(accountClientResultConverter
+                                        .convert(accountClient));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                });
         return accountClientsResult;
     }
 
+    @Override
     public List<AccountClientResult> find(String firstName){
         List<AccountClientResult> accountClientResult = new ArrayList<>();
-        accountClientDao.find(firstName.toLowerCase()).forEach(accountClient -> accountClientResult.add(accountClientResultConverter.convert(accountClient)));
+        accountClientDao
+                .find(firstName.toLowerCase())
+                .forEach(accountClient -> {
+                    try {
+                        accountClientResult
+                                .add(accountClientResultConverter
+                                        .convert(accountClient));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                });
+        return accountClientResult;
+    }
+
+    @Override
+    public List<AccountClientResult> find(String name, String value) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, IntrospectionException, InvocationTargetException {
+        List<AccountClientResult> accountClientResult = new ArrayList<>();
+        accountClientDao
+                .find(name,value)
+                .forEach(accountClient -> {
+                    try {
+                        accountClientResult
+                                .add(accountClientResultConverter.convert(accountClient));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                });
         return accountClientResult;
     }
 }

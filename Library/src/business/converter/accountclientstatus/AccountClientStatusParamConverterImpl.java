@@ -5,24 +5,20 @@ import dataaccess.dao.accountclientstatusdao.AccountClientStatusDao;
 import dataaccess.dao.accountclientstatusdao.AccountClientStatusDaoImpl;
 
 public class AccountClientStatusParamConverterImpl implements AccountClientStatusParamConverter {
-    private AccountClientStatusDao accountClientStatusDao;
 
-    public AccountClientStatusDao getAccountClientStatusDao() {
-        return accountClientStatusDao;
-    }
-
-    public void setAccountClientStatusDao(AccountClientStatusDao accountClientStatusDao) {
-        this.accountClientStatusDao = accountClientStatusDao;
-    }
 
     @Override
-    public AccountClientStatus convert(AccountClientStatusParam param) {
-        AccountClientStatus accountClientStatus = new AccountClientStatus();
-        accountClientStatus.setID(param.getID());
-        accountClientStatus.setName(param.getName());
-        accountClientStatus.setDescription(param.getDescription());
-        accountClientStatus.setCode(param.getCode());
-        accountClientStatus.setStatus(param.getStatus());
-        return accountClientStatus;
+    public AccountClientStatus convert(AccountClientStatusParam param, AccountClientStatus oldEntity){
+        AccountClientStatus entity = null;
+        if(oldEntity!=null){
+            entity = oldEntity;
+        } else {
+            entity = new AccountClientStatus();
+            entity.setID(param.getID());
+            entity.setCode(param.getCode());
+        }
+        entity.setName(param.getName());
+        entity.setDescription(param.getDescription());
+        return entity;
     }
 }

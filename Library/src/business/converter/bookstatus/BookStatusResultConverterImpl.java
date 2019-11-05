@@ -5,6 +5,11 @@ import data.entity.BookStatus;
 public class BookStatusResultConverterImpl implements BookStatusResultConverter{
     @Override
     public BookStatusResult convert(BookStatus param) {
-        return null;
+        BookStatusResult bookStatusResult = new BookStatusResult();
+        bookStatusResult.setCode(param.getCode());
+        bookStatusResult.setName(param.getName());
+        bookStatusResult.setDescription(param.getDescription());
+        bookStatusResult.setID(param.getID());
+        return bookStatusResult;
     }
 }

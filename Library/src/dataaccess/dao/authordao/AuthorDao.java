@@ -11,10 +11,10 @@ public interface AuthorDao {
     Author update(Author entity);
     List<Author> update(List<Author> entity);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(Author entity);
     void delete(List<Long> idList);
 
     List<Author> find();
-    Author find(long id);
+    Author find(Long id);
 }

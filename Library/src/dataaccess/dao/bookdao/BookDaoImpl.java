@@ -4,20 +4,28 @@ import data.entity.Book;
 
 import java.util.List;
 
+import static dataaccess.dao.bookdao.BookData.*;
+
 public class BookDaoImpl implements BookDao{
     @Override
     public Book save(Book entity) {
-        return null;
+        bookMap.putIfAbsent(entity.getID(), entity);
+        books.add(entity);
+
+        return entity;
     }
 
     @Override
-    public List<Book> save(List<Book> entity) {
-        return null;
+    public List<Book> save (List<Book> entity) {
+        books.addAll(entity);
+        return entity;
     }
 
     @Override
     public Book update(Book entity) {
-        return null;
+        delete(entity.getID());
+        books.add(entity);
+        return entity;
     }
 
     @Override
@@ -26,27 +34,31 @@ public class BookDaoImpl implements BookDao{
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        Book removeEntity = find(id);
+        delete(removeEntity);
     }
 
     @Override
     public void delete(Book entity) {
-
+        books.remove(entity);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        idList.forEach(this::delete);
     }
 
     @Override
     public List<Book> find() {
-        return null;
+        return books;
     }
 
     @Override
-    public Book find(long id) {
-        return null;
+    public Book find(Long id) {
+        return books
+                .stream()
+                .filter(a -> a.getID().equals(id))
+                .findFirst().get();
     }
 }

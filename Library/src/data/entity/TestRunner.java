@@ -3,6 +3,10 @@ package data.entity;
 import business.converter.accountclient.AccountClientParam;
 import business.converter.accountclientstatus.AccountClientStatusParam;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import dataaccess.dao.accountclientdao.AccountClientDao;
+import dataaccess.dao.accountclientdao.AccountClientDaoImpl;
+import dataaccess.dao.accountclientstatusdao.AccountClientStatusData;
+import dataaccess.dao.userdao.UserData;
 import presentation.service.accountclientservice.AccountClientService;
 import presentation.service.accountclientservice.AccountClientServiceImpl;
 import presentation.service.accountclientstatusservive.AccountClientStatusService;
@@ -16,16 +20,15 @@ public class TestRunner {
 
         AccountClientService accountClientService = new AccountClientServiceImpl();
         AccountClientStatusService accountClientStatusService = new AccountClientStatusServiceImpl();
+        AccountClientDao accountClientDao = new AccountClientDaoImpl();
 
         AccountClientStatus accountClientStatus = new AccountClientStatus();
         UserStatus userStatus = new UserStatus();
         User user1 = new User("Name","Password",userStatus);
         AccountClientParam accountClientParam = new AccountClientParam();
-        accountClientParam.setFirstName("Name");
+        accountClientParam.setFirstName("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         accountClientParam.setSecondName("OtherName");
         accountClientParam.setLastName("ThirdName");
-        accountClientParam.setAccountClientStatus(accountClientStatus);
-        accountClientParam.setUser(user1);
         accountClientParam.setPhone("asdasd");
         accountClientParam.setEmail("Email");
         accountClientParam.setCountry("Bulg");
@@ -34,19 +37,17 @@ public class TestRunner {
         accountClientParam.setCode(76756);
         accountClientParam.setName("AccountThing");
         accountClientParam.setDescription("Something");
-        accountClientParam.setID(8);
- //           System.out.println(accountClientService.create(accountClientParam).getText());
+        accountClientParam.setID((long) 4);
+            //System.out.println(accountClientService.create(accountClientParam).getText());
 
 
-        AccountClientStatus accountClientStatus2 = new AccountClientStatus();
-        UserStatus userStatus2 = new UserStatus();
-        User user2 = new User("Name","Password",userStatus2);
+
         AccountClientParam accountClientParam2 = new AccountClientParam();
+        accountClientParam2.setAccountClientStatusId((long)1);
+        accountClientParam2.setUserId((long) 1);
         accountClientParam2.setFirstName("Name");
         accountClientParam2.setSecondName("OtherName");
         accountClientParam2.setLastName("ThirdName");
-        accountClientParam2.setAccountClientStatus(accountClientStatus2);
-        accountClientParam2.setUser(user2);
         accountClientParam2.setPhone("asdasd");
         accountClientParam2.setEmail("Email");
         accountClientParam2.setCountry("Bulg");
@@ -55,7 +56,8 @@ public class TestRunner {
         accountClientParam2.setCode(2332456);
         accountClientParam2.setName("AccountThing");
         accountClientParam2.setDescription("Something");
-        accountClientParam2.setID(9);
+        accountClientParam2.setID((long) 9);
+
 
         AccountClientStatus accountClientStatus3 = new AccountClientStatus();
         UserStatus userStatus3 = new UserStatus();
@@ -64,8 +66,6 @@ public class TestRunner {
         accountClientParam3.setFirstName("Name");
         accountClientParam3.setSecondName("OtherName");
         accountClientParam3.setLastName("ThirdName");
-        accountClientParam3.setAccountClientStatus(accountClientStatus3);
-        accountClientParam3.setUser(user3);
         accountClientParam3.setPhone("asdasd");
         accountClientParam3.setEmail("Email");
         accountClientParam3.setCountry("Bulg");
@@ -74,11 +74,11 @@ public class TestRunner {
         accountClientParam3.setCode(233323);
         accountClientParam3.setName("AccountThing");
         accountClientParam3.setDescription("Something");
-        accountClientParam3.setID(10);
+        accountClientParam3.setID((long) 10);
 
-        List<AccountClientParam> accountClientParamList = new ArrayList<>();
-        accountClientParamList.add(accountClientParam2);
-        accountClientParamList.add(accountClientParam3);
+        //List<AccountClientParam> accountClientParamList = new ArrayList<>();
+        //accountClientParamList.add(accountClientParam2);
+        //accountClientParamList.add(accountClientParam3);
         //System.out.println(accountClientService.listAll().getText());
 
         /*System.out.println();
@@ -103,7 +103,7 @@ public class TestRunner {
 
 
         /* Block for Account client Status testing
-         */
+
         List<AccountClientStatusParam> accountClientStatuses = new ArrayList<>();
         AccountClientStatusParam accountClientStatusParam2 = new AccountClientStatusParam();
         AccountClientStatusParam accountClientStatusParam3 = new AccountClientStatusParam();
@@ -124,5 +124,10 @@ public class TestRunner {
         accountClientStatuses.add(accountClientStatusParam3);
 
         System.out.println(accountClientStatusService.create(accountClientStatuses).getText());
+        */
+        //System.out.println(accountClientService.listAll().getText());
+        //System.out.println(accountClientService.findByParameter("getFirstName","Ivan").getText());
+        System.out.println(accountClientService.create(accountClientParam2).getText());
+
     }
 }

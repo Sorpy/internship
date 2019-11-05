@@ -2,27 +2,36 @@ package dataaccess.dao.accountclientdao;
 
 import data.entity.AccountClient;
 
+import java.beans.IntrospectionException;
+import java.beans.PropertyDescriptor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static dataaccess.dao.accountclientdao.AccountData.accountClients;
+import static dataaccess.dao.accountclientdao.AccountClientData.accountClients;
+import static dataaccess.dao.accountclientdao.AccountClientData.accountClientsMap;
 
 public class AccountClientDaoImpl implements AccountClientDao {
     @Override
     public AccountClient save(AccountClient entity) {
+        accountClientsMap.putIfAbsent(entity.getID(),entity);
         accountClients.add(entity);
         return entity;
     }
 
     @Override
     public List<AccountClient> save(List<AccountClient> entity) {
+
         accountClients.addAll(entity);
         return accountClients;
     }
 
     @Override
     public AccountClient update(AccountClient entity) {
+        delete(entity.getID());
         accountClients.add(entity);
         return entity;
     }
@@ -33,7 +42,7 @@ public class AccountClientDaoImpl implements AccountClientDao {
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         AccountClient removeEntity = find(id);
         delete(removeEntity);
     }
@@ -61,10 +70,24 @@ public class AccountClientDaoImpl implements AccountClientDao {
     }
 
     @Override
-    public AccountClient find(long id) {
+    public List<AccountClient> find(String name, String value) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        List<AccountClient> accountClientsFiltered = new ArrayList<>();
+        Method method = AccountClient.class.getMethod(name);
+
+        for (AccountClient accountClient: accountClients) {
+            String field = method.invoke(accountClient).toString();
+            if (field.toLowerCase().equals(value)){
+                accountClientsFiltered.add(accountClient);
+            }
+        }
+        return accountClientsFiltered;
+    }
+
+    @Override
+    public AccountClient find(Long id) {
         return accountClients
                 .stream()
-                .filter(e -> e.getID() == id)
+                .filter(e -> e.getID().equals(id))
                 .findFirst().get();
     }
 }

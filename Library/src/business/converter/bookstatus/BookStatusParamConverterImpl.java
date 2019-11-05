@@ -5,18 +5,20 @@ import dataaccess.dao.bookstatusdao.BookStatusDao;
 import dataaccess.dao.bookstatusdao.BookStatusDaoImpl;
 
 public class BookStatusParamConverterImpl implements BookStatusParamConverter {
-    private BookStatusDao bookStatusDao;
 
-    public BookStatusDao getBookStatusDao() {
-        return bookStatusDao;
-    }
 
-    public void setBookStatusDao(BookStatusDao bookStatusDao) {
-        this.bookStatusDao = bookStatusDao;
-    }
-
-    @Override
-    public BookStatus convert(BookStatusParam param) {
-        return null;
-    }
+        @Override
+        public BookStatus convert(BookStatusParam param, BookStatus oldEntity) {
+            BookStatus entity = null;
+            if (oldEntity != null) {
+                entity = oldEntity;
+            } else {
+                entity = new BookStatus();
+                entity.setCode(param.getCode());
+                entity.setID(param.getID());
+            }
+            entity.setName(param.getName());
+            entity.setDescription(param.getDescription());
+            return entity;
+        }
 }

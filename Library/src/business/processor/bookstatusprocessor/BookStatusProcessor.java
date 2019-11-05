@@ -9,12 +9,12 @@ public interface BookStatusProcessor {
     BookStatusResult create(BookStatusParam param);
     List<BookStatusResult> create(List<BookStatusParam> param);
 
-    void update(long id,BookStatusParam param);
+    void update(Long id,BookStatusParam param);
     void update(List<BookStatusParam> param);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(List<Long> idList);
 
-    BookStatusResult find(long id);
+    BookStatusResult find(Long id);
     List<BookStatusResult> find();
 }

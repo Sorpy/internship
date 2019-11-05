@@ -9,12 +9,12 @@ public interface AccountClientStatusProcessor {
     AccountClientStatusResult create(AccountClientStatusParam param);
     List<AccountClientStatusResult> create(List<AccountClientStatusParam> param);
 
-    void update(long id,AccountClientStatusParam param);
+    void update(Long id,AccountClientStatusParam param);
     void update(List<AccountClientStatusParam> param);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(List<Long> idList);
 
-    AccountClientStatusResult find(long id);
+    AccountClientStatusResult find(Long id);
     List<AccountClientStatusResult> find();
 }

@@ -9,12 +9,13 @@ public interface AccountLibrarianProcessor {
     AccountLibrarianResult create(AccountLibrarianParam param);
     List<AccountLibrarianResult> create(List<AccountLibrarianParam> param);
 
-    void update(long id,AccountLibrarianParam param);
+    void update(Long id,AccountLibrarianParam param);
     void update(List<AccountLibrarianParam> param);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(List<Long> idList);
 
-    AccountLibrarianResult find(long id);
+    AccountLibrarianResult find(Long id);
+    List<AccountLibrarianResult> find(String name);
     List<AccountLibrarianResult> find();
 }

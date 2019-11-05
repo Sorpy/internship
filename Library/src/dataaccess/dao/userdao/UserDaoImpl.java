@@ -4,20 +4,28 @@ import data.entity.User;
 
 import java.util.List;
 
+import static dataaccess.dao.userdao.UserData.*;
+
 public class UserDaoImpl implements UserDao{
     @Override
     public User save(User entity) {
-        return null;
+        userMap.putIfAbsent(entity.getID(), entity);
+        users.add(entity);
+
+        return entity;
     }
 
     @Override
-    public List<User> save(List<User> entity) {
-        return null;
+    public List<User> save (List<User> entity) {
+        users.addAll(entity);
+        return entity;
     }
 
     @Override
     public User update(User entity) {
-        return null;
+        delete(entity.getID());
+        users.add(entity);
+        return entity;
     }
 
     @Override
@@ -26,27 +34,31 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        User removeEntity = find(id);
+        delete(removeEntity);
     }
 
     @Override
     public void delete(User entity) {
-
+        users.remove(entity);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        idList.forEach(this::delete);
     }
 
     @Override
     public List<User> find() {
-        return null;
+        return users;
     }
 
     @Override
-    public User find(long id) {
-        return null;
+    public User find(Long id) {
+        return users
+                .stream()
+                .filter(a -> a.getID().equals(id))
+                .findFirst().get();
     }
 }

@@ -1,13 +1,13 @@
 package data.entity;
 
 public class Persistent {
-    private int ID;
+    private Long ID;
 
-    public int getID() {
+    public Long getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(Long ID) {
         this.ID = ID;
     }
 }

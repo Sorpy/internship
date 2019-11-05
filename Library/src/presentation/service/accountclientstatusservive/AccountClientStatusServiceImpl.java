@@ -13,22 +13,33 @@ public class AccountClientStatusServiceImpl implements AccountClientStatusServic
     private Serialization serialization = new Serialization();
     private AccountClientStatusProcessor accountClientStatusProcessor = new AccountClientStatusProcessorImpl();
 
-    public AccountClientStatusProcessor getAccountClientStatusProcessor() {
-        return accountClientStatusProcessor;
-    }
-
-    public void setAccountClientStatusProcessor(AccountClientStatusProcessor accountClientStatusProcessor) {
-        this.accountClientStatusProcessor = accountClientStatusProcessor;
-    }
 
     @Override
     public APIResponse findByPK(long id) {
-        return null;
+        APIResponse response = new APIResponse();
+        try {
+            response.setText(serialization.serialization(accountClientStatusProcessor.find(id)));
+            response.setResult(true);
+        } catch (Exception e) {
+            response.setText("Something went wrong " + e.getMessage());
+            response.setResult(false);
+        }
+        return response;
     }
 
     @Override
     public APIResponse listAll() {
-        return null;
+        APIResponse response = new APIResponse();
+        try {
+            List<AccountClientStatusResult> accountClientResults = accountClientStatusProcessor.find();
+            response.setText(serialization.serialization(accountClientResults));
+            response.setResult(true);
+        } catch (Exception e) {
+            response.setText("Something went wrong " + e.getMessage());
+            response.setResult(false);
+        }
+
+        return response;
     }
 
     @Override
@@ -61,7 +72,9 @@ public class AccountClientStatusServiceImpl implements AccountClientStatusServic
 
     @Override
     public APIResponse update(long id, AccountClientStatusParam param) {
-        return null;
+        APIResponse response = new APIResponse();
+        accountClientStatusProcessor.update(id,param);
+        return response;
     }
 
     @Override
@@ -71,12 +84,32 @@ public class AccountClientStatusServiceImpl implements AccountClientStatusServic
 
     @Override
     public APIResponse deleteById(long id) {
-        return null;
+        APIResponse response = new APIResponse();
+        try {
+            accountClientStatusProcessor.delete(id);
+            response.setResult(true);
+            response.setText("deleted element with ID: " + id);
+        } catch (Exception e) {
+            response.setText("Something went wrong " + e.getMessage());
+            response.setResult(false);
+        }
+
+        return response;
     }
 
     @Override
     public APIResponse delete(List<Long> idList) {
-        return null;
+        APIResponse response = new APIResponse();
+        try {
+            accountClientStatusProcessor.delete(idList);
+            response.setResult(true);
+            response.setText("deleted element with IDs: " + idList.toString());
+        } catch (Exception e){
+            response.setText("Something went wrong " + e.getMessage());
+            response.setResult(false);
+        }
+
+        return response;
     }
 
     @Override

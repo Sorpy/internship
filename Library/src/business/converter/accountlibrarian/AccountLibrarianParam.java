@@ -1,8 +1,9 @@
 package business.converter.accountlibrarian;
 
 import business.converter.BaseNamedParam;
-import business.converter.accountlibrarianstatus.AccountLibrarianStatusParam;
 import business.converter.user.UserParam;
+import data.entity.AccountLibrarianStatus;
+import data.entity.User;
 
 public class AccountLibrarianParam  extends BaseNamedParam {
     private String firstName;
@@ -13,17 +14,27 @@ public class AccountLibrarianParam  extends BaseNamedParam {
     private String country;
     private String phone;
     private String email;
-    private UserParam user;
-    private AccountLibrarianStatusParam accountLibrarianStatusParam;
 
-
-    public UserParam getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(UserParam user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
+
+    public Long getAccountLibrarianStatusId() {
+        return accountLibrarianStatusId;
+    }
+
+    public void setAccountLibrarianStatusId(Long accountLibrarianStatusId) {
+        this.accountLibrarianStatusId = accountLibrarianStatusId;
+    }
+
+    private Long userId;
+    private Long accountLibrarianStatusId;
+
+
 
     public String getFirstName() {
         return firstName;

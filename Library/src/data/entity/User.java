@@ -11,6 +11,10 @@ public class User extends Persistent {
         this.userStatus = userStatus;
     }
 
+    public User() {
+
+    }
+
     public String getUsername() {
         return username;
     }

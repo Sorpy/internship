@@ -13,27 +13,23 @@ public class AccountClientServiceImpl implements AccountClientService {
     private Serialization serialization = new Serialization();
     private AccountClientProcessor accountClientProcessor = new AccountClientProcessorImpl();
 
-    public AccountClientProcessor getAccountClientProcessor() {
-        return accountClientProcessor;
-    }
-
-    public void setAccountClientProcessor(AccountClientProcessor accountClientProcessor) {
-        this.accountClientProcessor = accountClientProcessor;
-    }
 
     @Override
-    public APIResponse findByPK(long id) {
+    public APIResponse findByPK(Long id) {
         APIResponse response = new APIResponse();
         try {
-            response.setText(serialization.serialization(accountClientProcessor.find(id)));
+            response.setText
+                    (serialization.serialization
+                            (accountClientProcessor.find(id)));
             response.setResult(true);
         } catch (Exception e) {
-            response.setText("Something went wrong " + e.toString());
+            response.setText("Something went wrong " + e.getMessage());
             response.setResult(false);
         }
         return response;
     }
 
+    @Override
     public APIResponse findByName(String name){
         APIResponse response = new APIResponse();
         try {
@@ -41,10 +37,24 @@ public class AccountClientServiceImpl implements AccountClientService {
             response.setText(serialization.serialization(accountClientResults));
             response.setResult(true);
         } catch (Exception e) {
-            response.setText("Something went wrong " + e.toString());
+            response.setText("Something went wrong " + e.getMessage());
             response.setResult(false);
         }
 
+        return response;
+    }
+
+    public APIResponse findByParameter(String name,String value){
+        APIResponse response = new APIResponse();
+        try {
+
+            List<AccountClientResult> accountClientResults = accountClientProcessor.find(name, value.toLowerCase());
+            response.setText(serialization.serialization(accountClientResults));
+            response.setResult(true);
+        } catch (Exception e){
+            response.setText("Something went wrong " + e.getMessage());
+            response.setResult(false);
+        }
         return response;
     }
 
@@ -56,7 +66,7 @@ public class AccountClientServiceImpl implements AccountClientService {
             response.setText(serialization.serialization(accountClientResults));
             response.setResult(true);
         } catch (Exception e) {
-            response.setText("Something went wrong " + e.toString());
+            response.setText("Something went wrong " + e.getMessage());
             response.setResult(false);
         }
 
@@ -71,7 +81,7 @@ public class AccountClientServiceImpl implements AccountClientService {
             response.setText(serialization.serialization(accountClientResult));
             response.setResult(true);
         } catch (Exception e){
-            response.setText("Something went wrong "+ e.toString());
+            response.setText("Something went wrong "+ e);
             response.setResult(false);
         }
 
@@ -83,16 +93,17 @@ public class AccountClientServiceImpl implements AccountClientService {
         APIResponse response = new APIResponse();
         try{
             response.setResult(true);
-            response.setText(serialization.serialization(accountClientProcessor.create(param)));
+            response.setText(serialization.serialization
+                    (accountClientProcessor.create(param)));
         } catch(Exception e) {
-            response.setText("Something went wrong " + e.toString());
+            response.setText("Something went wrong " + e.getMessage());
             response.setResult(false);
         }
         return response;
     }
 
     @Override
-    public APIResponse update(long id, AccountClientParam param) {
+    public APIResponse update(Long id, AccountClientParam param) {
         APIResponse response = new APIResponse();
         accountClientProcessor.update(id,param);
 
@@ -105,14 +116,14 @@ public class AccountClientServiceImpl implements AccountClientService {
     }
 
     @Override
-    public APIResponse deleteById(long id) {
+    public APIResponse deleteById(Long id) {
         APIResponse response = new APIResponse();
         try {
             accountClientProcessor.delete(id);
             response.setResult(true);
             response.setText("deleted element with ID: " + id);
         } catch (Exception e){
-            response.setText("Something went wrong " + e.toString());
+            response.setText("Something went wrong " + e.getMessage());
             response.setResult(false);
         }
 
@@ -127,7 +138,7 @@ public class AccountClientServiceImpl implements AccountClientService {
             response.setResult(true);
             response.setText("deleted element with IDs: " + idList.toString());
         } catch (Exception e){
-            response.setText("Something went wrong " + e.toString());
+            response.setText("Something went wrong " + e.getMessage());
             response.setResult(false);
         }
 

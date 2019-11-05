@@ -5,6 +5,11 @@ import data.entity.Department;
 public class DepartmentResultConverterImpl implements DepartmentResultConverter {
     @Override
     public DepartmentResult convert(Department param) {
-        return null;
+        DepartmentResult departmentResult = new DepartmentResult();
+        departmentResult.setCode(param.getCode());
+        departmentResult.setName(param.getName());
+        departmentResult.setDescription(param.getDescription());
+        departmentResult.setID(param.getID());
+        return departmentResult;
     }
 }

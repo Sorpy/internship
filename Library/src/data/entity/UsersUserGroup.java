@@ -2,7 +2,7 @@ package data.entity;
 
 public class UsersUserGroup extends Persistent {
     private User user;
-    private UserGroup userGroup;
+    private UserGroup userGroup;//list
 
     public User getUser() {
         return user;

@@ -4,5 +4,5 @@ import data.entity.AccountClientStatus;
 
 public interface AccountClientStatusParamConverter {
 
-    AccountClientStatus convert(AccountClientStatusParam param);
+    AccountClientStatus convert(AccountClientStatusParam param, AccountClientStatus oldEntity);
 }

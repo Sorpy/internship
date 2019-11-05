@@ -4,5 +4,5 @@ import data.entity.AccountLibrarian;
 
 public interface AccountLibrarianParamConverter {
 
-    AccountLibrarian convert(AccountLibrarianParam param);
+    AccountLibrarian convert(AccountLibrarianParam param, AccountLibrarian oldEntity);
 }

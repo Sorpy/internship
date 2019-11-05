@@ -9,12 +9,12 @@ public interface OrderProcessor {
     OrderResult create(OrderParam param);
     List<OrderResult> create(List<OrderParam> param);
 
-    void update(long id,OrderParam param);
+    void update(Long id,OrderParam param);
     void update(List<OrderParam> param);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(List<Long> idList);
 
-    OrderResult find(long id);
+    OrderResult find(Long id);
     List<OrderResult> find();
 }

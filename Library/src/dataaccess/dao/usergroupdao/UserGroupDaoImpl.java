@@ -4,20 +4,27 @@ import data.entity.UserGroup;
 
 import java.util.List;
 
+import static dataaccess.dao.usergroupdao.UserGroupData.*;
+
 public class UserGroupDaoImpl implements UserGroupDao{
     @Override
     public UserGroup save(UserGroup entity) {
-        return null;
+        userGroupMap.putIfAbsent(entity.getID(), entity);
+        userGroups.add(entity);
+
+        return entity;
     }
 
     @Override
-    public List<UserGroup> save(List<UserGroup> entity) {
-        return null;
+    public List<UserGroup> save (List<UserGroup> entity) {
+        userGroups.addAll(entity);
+        return entity;
     }
 
     @Override
     public UserGroup update(UserGroup entity) {
-        return null;
+        userGroups.add(entity);
+        return entity;
     }
 
     @Override
@@ -27,26 +34,30 @@ public class UserGroupDaoImpl implements UserGroupDao{
 
     @Override
     public void delete(long id) {
-
+        UserGroup removeEntity = find(id);
+        delete(removeEntity);
     }
 
     @Override
     public void delete(UserGroup entity) {
-
+        userGroups.remove(entity);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        idList.forEach(this::delete);
     }
 
     @Override
     public List<UserGroup> find() {
-        return null;
+        return userGroups;
     }
 
     @Override
     public UserGroup find(long id) {
-        return null;
+        return userGroups
+                .stream()
+                .filter(a -> a.getID()==id)
+                .findFirst().get();
     }
 }

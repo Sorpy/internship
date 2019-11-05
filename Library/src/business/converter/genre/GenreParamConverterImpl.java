@@ -5,18 +5,19 @@ import dataaccess.dao.genredao.GenreDao;
 import dataaccess.dao.genredao.GenreDaoImpl;
 
 public class GenreParamConverterImpl implements GenreParamConverter {
-    private GenreDao genreDao;
-
-    public GenreDao getGenreDao() {
-        return genreDao;
-    }
-
-    public void setGenreDao(GenreDao genreDao) {
-        this.genreDao = genreDao;
-    }
 
     @Override
-    public Genre convert(GenreParam param) {
-        return null;
+    public Genre convert(GenreParam param, Genre oldEntity) {
+        Genre entity = null;
+        if (oldEntity != null) {
+            entity = oldEntity;
+        } else {
+            entity = new Genre();
+            entity.setCode(param.getCode());
+            entity.setID(param.getID());
+        }
+        entity.setName(param.getName());
+        entity.setDescription(param.getDescription());
+        return entity;
     }
 }

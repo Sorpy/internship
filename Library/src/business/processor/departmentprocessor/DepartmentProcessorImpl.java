@@ -1,53 +1,51 @@
 package business.processor.departmentprocessor;
 
 import business.converter.department.*;
+import data.entity.Department;
 import dataaccess.dao.departmentdao.DepartmentDao;
 import dataaccess.dao.departmentdao.DepartmentDaoImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DepartmentProcessorImpl implements DepartmentProcessor{
-    private DepartmentDao departmentDao;
-    private DepartmentParamConverter departmentParamConverter;
-    private DepartmentResultConverter departmentResultConverter;
+    private DepartmentDao departmentDao = new DepartmentDaoImpl();
+    private DepartmentParamConverter departmentParamConverter = new DepartmentParamConverterImpl();
+    private DepartmentResultConverter departmentResultConverter = new DepartmentResultConverterImpl();
 
-    public DepartmentDao getDepartmentDao() {
-        return departmentDao;
-    }
-
-    public void setDepartmentDao(DepartmentDao departmentDao) {
-        this.departmentDao = departmentDao;
-    }
-
-    public DepartmentParamConverter getDepartmentParamConverter() {
-        return departmentParamConverter;
-    }
-
-    public void setDepartmentParamConverter(DepartmentParamConverter departmentParamConverter) {
-        this.departmentParamConverter = departmentParamConverter;
-    }
-
-    public DepartmentResultConverter getDepartmentResultConverter() {
-        return departmentResultConverter;
-    }
-
-    public void setDepartmentResultConverter(DepartmentResultConverter departmentResultConverter) {
-        this.departmentResultConverter = departmentResultConverter;
-    }
 
     @Override
     public DepartmentResult create(DepartmentParam param) {
-        return null;
+        return departmentResultConverter
+                .convert(departmentDao
+                        .save(departmentParamConverter
+                                .convert(param,null)));
     }
 
     @Override
     public List<DepartmentResult> create(List<DepartmentParam> param) {
-        return null;
+        List<Department> departments = new ArrayList<>();
+        List<DepartmentResult> departmentResults = new ArrayList<>();
+
+        param.forEach(departmentParam -> departments
+                .add(departmentParamConverter
+                        .convert(departmentParam,null)));
+        departmentDao.save(departments);
+        departments.forEach(department -> departmentResults
+                .add(departmentResultConverter
+                        .convert(department)));
+
+        return departmentResults;
     }
 
     @Override
-    public void update(long id, DepartmentParam param) {
-
+    public void update(Long id, DepartmentParam param) {
+        Department oldEntity = departmentDao.find(id);
+        if (oldEntity!=null){
+            departmentDao
+                    .update(departmentParamConverter
+                            .convert(param,oldEntity));
+        }else System.out.println("No entity with id " + id + " found");
     }
 
     @Override
@@ -56,22 +54,29 @@ public class DepartmentProcessorImpl implements DepartmentProcessor{
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        departmentDao.delete(id);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        departmentDao.delete(idList);
     }
 
     @Override
-    public DepartmentResult find(long id) {
-        return null;
+    public DepartmentResult find(Long id) {
+        return departmentResultConverter
+                .convert(departmentDao
+                        .find(id));
     }
 
     @Override
     public List<DepartmentResult> find() {
-        return null;
+        List<DepartmentResult> departmentResults = new ArrayList<>();
+        departmentDao.find()
+                .forEach(department -> departmentResults
+                        .add(departmentResultConverter
+                                .convert(department)));
+        return departmentResults;
     }
 }

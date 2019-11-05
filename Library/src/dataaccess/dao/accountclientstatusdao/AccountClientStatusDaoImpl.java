@@ -9,19 +9,23 @@ import static dataaccess.dao.accountclientstatusdao.AccountClientStatusData.*;
 public class AccountClientStatusDaoImpl implements AccountClientStatusDao {
     @Override
     public AccountClientStatus save(AccountClientStatus entity) {
-        accountClients.add(entity);
+            accountClientStatusMap.putIfAbsent(entity.getID(),entity);
+        accountClientStatuses.add(entity);
+
         return entity;
     }
 
     @Override
     public List<AccountClientStatus> save(List<AccountClientStatus> entity) {
-        accountClients.addAll(entity);
+        accountClientStatuses.addAll(entity);
         return entity;
     }
 
     @Override
     public AccountClientStatus update(AccountClientStatus entity) {
-        return null;
+        delete(entity.getID());
+        accountClientStatuses.add(entity);
+        return entity;
     }
 
     @Override
@@ -30,27 +34,31 @@ public class AccountClientStatusDaoImpl implements AccountClientStatusDao {
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        AccountClientStatus removeEntity = find(id);
+        delete(removeEntity);
     }
 
     @Override
     public void delete(AccountClientStatus entity) {
-
+        accountClientStatuses.remove(entity);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        idList.forEach(this::delete);
     }
 
     @Override
     public List<AccountClientStatus> find() {
-        return null;
+        return accountClientStatuses;
     }
 
     @Override
-    public AccountClientStatus find(long id) {
-        return null;
+    public AccountClientStatus find(Long id) {
+        return accountClientStatuses
+                .stream()
+                .filter(a -> a.getID().equals(id))
+                .findFirst().get();
     }
 }

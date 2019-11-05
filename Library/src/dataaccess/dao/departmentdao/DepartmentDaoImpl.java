@@ -4,20 +4,28 @@ import data.entity.Department;
 
 import java.util.List;
 
+import static dataaccess.dao.departmentdao.DepartmentData.*;
+
 public class DepartmentDaoImpl implements DepartmentDao {
     @Override
     public Department save(Department entity) {
-        return null;
+        departmentMap.putIfAbsent(entity.getID(), entity);
+        departments.add(entity);
+
+        return entity;
     }
 
     @Override
-    public List<Department> save(List<Department> entity) {
-        return null;
+    public List<Department> save (List<Department> entity) {
+        departments.addAll(entity);
+        return entity;
     }
 
     @Override
     public Department update(Department entity) {
-        return null;
+        delete(entity.getID());
+        departments.add(entity);
+        return entity;
     }
 
     @Override
@@ -26,27 +34,31 @@ public class DepartmentDaoImpl implements DepartmentDao {
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        Department removeEntity = find(id);
+        delete(removeEntity);
     }
 
     @Override
     public void delete(Department entity) {
-
+        departments.remove(entity);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        idList.forEach(this::delete);
     }
 
     @Override
     public List<Department> find() {
-        return null;
+        return departments;
     }
 
     @Override
-    public Department find(long id) {
-        return null;
+    public Department find(Long id) {
+        return departments
+                .stream()
+                .filter(a -> a.getID().equals(id))
+                .findFirst().get();
     }
 }

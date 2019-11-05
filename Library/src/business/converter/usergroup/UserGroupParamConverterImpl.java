@@ -17,6 +17,21 @@ public class UserGroupParamConverterImpl implements UserGroupParamConverter {
 
     @Override
     public UserGroup convert(UserGroupParam param) {
-        return null;
+
+        UserGroup userGroup = new UserGroup();
+        userGroup.setID(param.getID());
+        userGroup.setUserGroupStatus(param.getUserGroupStatus());
+        return userGroup;
+    }
+    @Override
+    public UserGroup convert(UserGroupParam param, UserGroup oldEntity) {
+        UserGroup entity = null;
+        if (oldEntity != null) {
+            entity = oldEntity;
+        } else {
+            entity = new UserGroup();
+        }
+        entity.setUserGroupStatus(param.getUserGroupStatus());
+        return entity;
     }
 }

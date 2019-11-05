@@ -13,26 +13,24 @@ public class AccountClientParam extends BaseNamedParam {
     private String country;
     private String phone;
     private String email;
-    private User user;
-    private AccountClientStatus accountClientStatus;
+    private Long userId;
+    private Long accountClientStatusId;
 
 
-    public AccountClientStatus getAccountClientStatus() {
-        return accountClientStatus;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setAccountClientStatus(AccountClientStatus accountClientStatus) {
-        this.accountClientStatus = accountClientStatus;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-
-
-    public User getUser() {
-        return user;
+    public Long getAccountClientStatusId() {
+        return accountClientStatusId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setAccountClientStatusId(Long accountClientStatusId) {
+        this.accountClientStatusId = accountClientStatusId;
     }
 
     public String getFirstName() {

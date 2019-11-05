@@ -1,54 +1,49 @@
 package business.processor.authorprocessor;
 
 import business.converter.author.*;
+import data.entity.Author;
 import dataaccess.dao.authordao.AuthorDao;
 import dataaccess.dao.authordao.AuthorDaoImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AuthorProcessorImpl implements AuthorProcessor{
-    private AuthorDao authorDao;
-    private AuthorParamConverter authorParamConverter;
+    private AuthorDao authorDao = new AuthorDaoImpl();
+    private AuthorParamConverter authorParamConverter= new AuthorParamConverterImpl();
+    private AuthorResultConverter authorResultConverter = new AuthorResultConverterImpl();
 
-    public AuthorResultConverter getAuthorResultConverter() {
-        return authorResultConverter;
-    }
-
-    public void setAuthorResultConverter(AuthorResultConverter authorResultConverter) {
-        this.authorResultConverter = authorResultConverter;
-    }
-
-    private AuthorResultConverter authorResultConverter;
-
-    public AuthorDao getAuthorDao() {
-        return authorDao;
-    }
-
-    public void setAuthorDao(AuthorDao authorDao) {
-        this.authorDao = authorDao;
-    }
-
-    public AuthorParamConverter getAuthorParamConverter() {
-        return authorParamConverter;
-    }
-
-    public void setAuthorParamConverter(AuthorParamConverter authorParamConverter) {
-        this.authorParamConverter = authorParamConverter;
-    }
 
     @Override
     public AuthorResult create(AuthorParam param) {
-        return null;
+        return authorResultConverter
+                .convert(authorDao
+                        .save(authorParamConverter
+                                .convert(param,null)));
     }
 
     @Override
     public List<AuthorResult> create(List<AuthorParam> param) {
-        return null;
+        List<Author> authors = new ArrayList<>();
+        List<AuthorResult> authorResults = new ArrayList<>();
+
+        param.forEach
+                (author -> authors.add
+                        (authorParamConverter.convert(author,null)));
+        authorDao.save(authors);
+        authors.forEach
+                (author -> authorResults.add
+                        (authorResultConverter.convert(author)));
+
+        return authorResults;
     }
 
     @Override
-    public void update(long id, AuthorParam param) {
-
+    public void update(Long id, AuthorParam param) {
+        Author oldEntity = authorDao.find(id);
+        if (oldEntity!=null){
+            authorDao.update(authorParamConverter.convert(param,oldEntity));
+        }else System.out.println("No entity with id " + id + " found");
     }
 
     @Override
@@ -57,22 +52,27 @@ public class AuthorProcessorImpl implements AuthorProcessor{
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        authorDao.delete(id);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        authorDao.delete(idList);
     }
 
     @Override
-    public AuthorResult find(long id) {
-        return null;
+    public AuthorResult find(Long id) {
+        return authorResultConverter.convert
+                (authorDao.find(id));
     }
 
     @Override
     public List<AuthorResult> find() {
-        return null;
+        List<AuthorResult> authorResults = new ArrayList<>();
+        authorDao.find()
+                .forEach(author -> authorResults.add
+                        (authorResultConverter.convert(author)));
+        return authorResults;
     }
 }

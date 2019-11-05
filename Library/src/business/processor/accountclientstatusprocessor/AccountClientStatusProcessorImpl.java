@@ -13,33 +13,13 @@ public class AccountClientStatusProcessorImpl implements AccountClientStatusProc
     private AccountClientStatusParamConverter accountClientStatusParamConverter = new AccountClientStatusParamConverterImpl();
     private AccountClientStatusResultConverter accountClientStatusResultConverter = new AccountClientStatusResultConverterImpl();
 
-    public AccountClientStatusDao getAccountClientStatusDao() {
-        return accountClientStatusDao;
-    }
-
-    public void setAccountClientStatusDao(AccountClientStatusDao accountClientStatusDao) {
-        this.accountClientStatusDao = accountClientStatusDao;
-    }
-
-    public AccountClientStatusParamConverter getAccountClientStatusParamConverter() {
-        return accountClientStatusParamConverter;
-    }
-
-    public void setAccountClientStatusParamConverter(AccountClientStatusParamConverter accountClientStatusParamConverter) {
-        this.accountClientStatusParamConverter = accountClientStatusParamConverter;
-    }
-
-    public AccountClientStatusResultConverter getAccountClientStatusResultConverter() {
-        return accountClientStatusResultConverter;
-    }
-
-    public void setAccountClientStatusResultConverter(AccountClientStatusResultConverter accountClientStatusResultConverter) {
-        this.accountClientStatusResultConverter = accountClientStatusResultConverter;
-    }
 
     @Override
     public AccountClientStatusResult create(AccountClientStatusParam param) {
-        return accountClientStatusResultConverter.convert(accountClientStatusDao.save(accountClientStatusParamConverter.convert(param)));
+        return accountClientStatusResultConverter
+                .convert(accountClientStatusDao
+                        .save(accountClientStatusParamConverter
+                                .convert(param,null)));
     }
 
     @Override
@@ -47,16 +27,27 @@ public class AccountClientStatusProcessorImpl implements AccountClientStatusProc
         List<AccountClientStatus> accountClients = new ArrayList<>();
         List<AccountClientStatusResult> accountClientsResult = new ArrayList<>();
 
-        param.forEach(account -> accountClients.add(accountClientStatusParamConverter.convert(account)));
+        param.forEach
+                (accountClientStatus -> accountClients
+                        .add(accountClientStatusParamConverter
+                                .convert(accountClientStatus,null)));
         accountClientStatusDao.save(accountClients);
-        accountClients.forEach(clients -> accountClientsResult.add(accountClientStatusResultConverter.convert(clients)));
+        accountClients.forEach
+                (status -> accountClientsResult
+                        .add(accountClientStatusResultConverter
+                                .convert(status)));
 
         return accountClientsResult;
     }
 
     @Override
-    public void update(long id, AccountClientStatusParam param) {
-
+    public void update(Long id, AccountClientStatusParam param) {
+        AccountClientStatus oldEntity = accountClientStatusDao.find(id);
+        if (oldEntity!=null){
+            accountClientStatusDao
+                    .update(accountClientStatusParamConverter
+                            .convert(param,oldEntity));
+        }else System.out.println("No entity with id " + id + " found");
     }
 
     @Override
@@ -65,22 +56,28 @@ public class AccountClientStatusProcessorImpl implements AccountClientStatusProc
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        accountClientStatusDao.delete(id);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        accountClientStatusDao.delete(idList);
     }
 
     @Override
-    public AccountClientStatusResult find(long id) {
-        return null;
+    public AccountClientStatusResult find(Long id) {
+        return accountClientStatusResultConverter
+                .convert(accountClientStatusDao.find(id));
     }
 
     @Override
     public List<AccountClientStatusResult> find() {
-        return null;
+        List<AccountClientStatusResult> accountClientStatusResult = new ArrayList<>();
+        accountClientStatusDao.find()
+                .forEach(accountClientStatus -> accountClientStatusResult
+                        .add(accountClientStatusResultConverter
+                                .convert(accountClientStatus)));
+        return accountClientStatusResult;
     }
 }

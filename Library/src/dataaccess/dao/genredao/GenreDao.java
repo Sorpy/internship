@@ -11,10 +11,10 @@ public interface GenreDao {
     Genre update(Genre entity);
     List<Genre> update(List<Genre> entity);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(Genre entity);
     void delete(List<Long> idList);
 
     List<Genre> find();
-    Genre find(long id);
+    Genre find(Long id);
 }

@@ -11,10 +11,10 @@ public interface BookDao {
     Book update(Book entity);
     List<Book> update(List<Book> entity);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(Book entity);
     void delete(List<Long> idList);
 
     List<Book> find();
-    Book find(long id);
+    Book find(Long id);
 }

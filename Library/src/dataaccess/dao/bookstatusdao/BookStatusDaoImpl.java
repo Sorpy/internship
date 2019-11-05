@@ -4,20 +4,28 @@ import data.entity.BookStatus;
 
 import java.util.List;
 
+import static dataaccess.dao.bookstatusdao.BookStatusData.*;
+
 public class BookStatusDaoImpl implements BookStatusDao {
     @Override
     public BookStatus save(BookStatus entity) {
-        return null;
+        bookStatusMap.putIfAbsent(entity.getID(), entity);
+        bookStatuses.add(entity);
+
+        return entity;
     }
 
     @Override
-    public List<BookStatus> save(List<BookStatus> entity) {
-        return null;
+    public List<BookStatus> save (List<BookStatus> entity) {
+        bookStatuses.addAll(entity);
+        return entity;
     }
 
     @Override
     public BookStatus update(BookStatus entity) {
-        return null;
+        delete(entity.getID());
+        bookStatuses.add(entity);
+        return entity;
     }
 
     @Override
@@ -26,27 +34,31 @@ public class BookStatusDaoImpl implements BookStatusDao {
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        BookStatus removeEntity = find(id);
+        delete(removeEntity);
     }
 
     @Override
     public void delete(BookStatus entity) {
-
+        bookStatuses.remove(entity);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        idList.forEach(this::delete);
     }
 
     @Override
     public List<BookStatus> find() {
-        return null;
+        return bookStatuses;
     }
 
     @Override
-    public BookStatus find(long id) {
-        return null;
+    public BookStatus find(Long id) {
+        return bookStatuses
+                .stream()
+                .filter(a -> a.getID().equals(id))
+                .findFirst().get();
     }
 }

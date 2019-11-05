@@ -9,12 +9,12 @@ public interface DepartmentProcessor {
     DepartmentResult create(DepartmentParam param);
     List<DepartmentResult> create(List<DepartmentParam> param);
 
-    void update(long id,DepartmentParam param);
+    void update(Long id,DepartmentParam param);
     void update(List<DepartmentParam> param);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(List<Long> idList);
 
-    DepartmentResult find(long id);
+    DepartmentResult find(Long id);
     List<DepartmentResult> find();
 }

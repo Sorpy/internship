@@ -1,53 +1,50 @@
 package business.processor.bookprocessor;
 
 import business.converter.book.*;
+import data.entity.Book;
 import dataaccess.dao.bookdao.BookDao;
 import dataaccess.dao.bookdao.BookDaoImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookProcessorImpl implements BookProcessor{
-    private BookDao bookDao;
-    private BookParamConverter bookParamConverter;
-    private BookResultConverter bookResultConverter;
+    private BookDao bookDao = new BookDaoImpl();
+    private BookParamConverter bookParamConverter = new BookParamConverterImpl();
+    private BookResultConverter bookResultConverter = new BookResultConverterImpl();
 
-    public BookDao getBookDao() {
-        return bookDao;
-    }
-
-    public void setBookDao(BookDao bookDao) {
-        this.bookDao = bookDao;
-    }
-
-    public BookParamConverter getBookParamConverter() {
-        return bookParamConverter;
-    }
-
-    public void setBookParamConverter(BookParamConverter bookParamConverter) {
-        this.bookParamConverter = bookParamConverter;
-    }
-
-    public BookResultConverter getBookResultConverter() {
-        return bookResultConverter;
-    }
-
-    public void setBookResultConverter(BookResultConverter bookResultConverter) {
-        this.bookResultConverter = bookResultConverter;
-    }
 
     @Override
     public BookResult create(BookParam param) {
-        return null;
+        return bookResultConverter.convert
+                (bookDao.save
+                        (bookParamConverter.convert(param,null)));
     }
 
     @Override
     public List<BookResult> create(List<BookParam> param) {
-        return null;
+        List<Book> books = new ArrayList<>();
+        List<BookResult> bookResults = new ArrayList<>();
+
+        param.forEach
+                (book -> books.add
+                        (bookParamConverter.convert
+                                (book,null)));
+        bookDao.save(books);
+        books.forEach
+                (book -> bookResults.add
+                        (bookResultConverter.convert(book)));
+
+        return bookResults;
     }
 
     @Override
-    public void update(long id, BookParam param) {
-
+    public void update(Long id, BookParam param) {
+        Book oldEntity = bookDao.find(id);
+        if (oldEntity!=null){
+            bookDao.update
+                    (bookParamConverter.convert(param,oldEntity));
+        }else System.out.println("No entity with id " + id + " found");
     }
 
     @Override
@@ -56,22 +53,26 @@ public class BookProcessorImpl implements BookProcessor{
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        bookDao.delete(id);
     }
 
     @Override
     public void delete(List<Long> idList) {
-
+        bookDao.delete(idList);
     }
 
     @Override
-    public BookResult find(long id) {
-        return null;
+    public BookResult find(Long id) {
+        return bookResultConverter.convert(bookDao.find(id));
     }
 
     @Override
     public List<BookResult> find() {
-        return null;
+        List<BookResult> bookResults = new ArrayList<>();
+        bookDao.find()
+                .forEach(book -> bookResults.add
+                        (bookResultConverter.convert(book)));
+        return bookResults;
     }
 }

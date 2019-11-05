@@ -3,21 +3,29 @@ package dataaccess.dao.accountlibrariandao;
 import data.entity.AccountLibrarian;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static dataaccess.dao.accountlibrariandao.AccountLibrarianData.*;
 
 public class AccountLibrarianDaoImpl implements AccountLibrarianDao {
     @Override
     public AccountLibrarian save(AccountLibrarian entity) {
-        return null;
+        accountLibrarians.add(entity);
+        accountLibrarianMap.putIfAbsent(entity.getID(),entity);
+        return entity;
     }
 
     @Override
     public List<AccountLibrarian> save(List<AccountLibrarian> entity) {
-        return null;
+        accountLibrarians.addAll(entity);
+        return entity;
     }
 
     @Override
     public AccountLibrarian update(AccountLibrarian entity) {
-        return null;
+        delete(entity.getID());
+        accountLibrarians.add(entity);
+        return entity;
     }
 
     @Override
@@ -26,27 +34,40 @@ public class AccountLibrarianDaoImpl implements AccountLibrarianDao {
     }
 
     @Override
-    public void delete(long id) {
-
+    public void delete(Long id) {
+        AccountLibrarian removeEntity = find(id);
+        delete(removeEntity);
     }
 
     @Override
     public void delete(AccountLibrarian entity) {
-
+        accountLibrarians.remove(entity);
     }
 
     @Override
-    public void delete(List<Long> idList) {
-
+    public void delete(List<Long> idList)  {
+        idList.forEach(this::delete);
     }
 
     @Override
     public List<AccountLibrarian> find() {
-        return null;
+        return accountLibrarians;
     }
 
     @Override
-    public AccountLibrarian find(long id) {
-        return null;
+    public AccountLibrarian find(Long id) {
+        return accountLibrarians
+                .stream()
+                .filter(e -> e.getID().equals(id))
+                .findFirst().get();
     }
+
+    @Override
+    public List<AccountLibrarian> find (String name){
+        return accountLibrarians
+                .stream()
+                .filter(e -> e.getFirstName().toLowerCase().equals(name))
+                .collect(Collectors.toList());
+    }
+
 }

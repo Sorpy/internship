@@ -9,12 +9,12 @@ public interface AuthorProcessor {
     AuthorResult create(AuthorParam param);
     List<AuthorResult> create(List<AuthorParam> param);
 
-    void update(long id,AuthorParam param);
+    void update(Long id,AuthorParam param);
     void update(List<AuthorParam> param);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(List<Long> idList);
 
-    AuthorResult find(long id);
+    AuthorResult find(Long id);
     List<AuthorResult> find();
 }

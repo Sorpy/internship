@@ -6,16 +6,17 @@ import data.common.APIResponse;
 import java.util.List;
 
 public interface AccountLibrarianService {
-    APIResponse findByPK(long id);
+    APIResponse findByPK(Long id);
+    APIResponse findByName(String name);
     APIResponse listAll();
 
     APIResponse create(AccountLibrarianParam param);
     APIResponse create(List<AccountLibrarianParam> param);
 
-    APIResponse update(long id, AccountLibrarianParam param);
+    APIResponse update(Long id, AccountLibrarianParam param);
     APIResponse update(List<AccountLibrarianParam> param);
 
-    APIResponse deleteById(long id);
+    APIResponse deleteById(Long id);
     APIResponse delete(List<Long> idList);
 
     void validateParameters(AccountLibrarianParam param);

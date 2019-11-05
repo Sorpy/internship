@@ -16,7 +16,17 @@ public class AuthorParamConverterImpl implements AuthorParamConverter{
     }
 
     @Override
-    public Author convert(AuthorParam param) {
-        return null;
+    public Author convert(AuthorParam param, Author oldEntity){
+        Author entity = null;
+        if(oldEntity!=null){
+            entity = oldEntity;
+        } else {
+            entity = new Author();
+            entity.setID(param.getID());
+            entity.setCode(param.getCode());
+        }
+        entity.setName(param.getName());
+        entity.setDescription(param.getDescription());
+        return entity;
     }
 }

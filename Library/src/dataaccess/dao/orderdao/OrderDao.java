@@ -11,10 +11,10 @@ public interface OrderDao {
     Order update(Order entity);
     List<Order> update(List<Order> entity);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(Order entity);
     void delete(List<Long> idList);
 
     List<Order> find();
-    Order find(long id);
+    Order find(Long id);
 }

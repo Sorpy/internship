@@ -5,6 +5,11 @@ import data.entity.Genre;
 public class GenreResultConverterImpl implements GenreResultConverter{
     @Override
     public GenreResult convert(Genre param) {
-        return null;
+        GenreResult genreResult = new GenreResult();
+        genreResult.setCode(param.getCode());
+        genreResult.setName(param.getName());
+        genreResult.setDescription(param.getDescription());
+        genreResult.setID(param.getID());
+        return genreResult;
     }
 }

@@ -4,22 +4,21 @@ import data.entity.AccountClient;
 import data.entity.AccountClientStatus;
 import data.entity.User;
 import data.entity.UserStatus;
+import dataaccess.dao.accountclientstatusdao.AccountClientStatusData;
+import dataaccess.dao.userdao.UserData;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class AccountData {
+public class AccountClientData {
 
-    static List<AccountClient> accountClients = new ArrayList<>();
-    public static Map<Integer,AccountClient>  accountClientMap;
+    public static List<AccountClient> accountClients = new ArrayList<>();
+    public static Map<Long,AccountClient> accountClientsMap;
+
 
     static {
-        UserStatus userStatus1 = new UserStatus();
-        User user1 = new User("name1","password1",userStatus1);
-        AccountClientStatus accountClientStatus = new AccountClientStatus();
 
         AccountClient accountClient1 = new AccountClient();
         accountClient1.setFirstName("Ivan");
@@ -30,12 +29,12 @@ public class AccountData {
         accountClient1.setCity("Burgas");
         accountClient1.setCountry("Bulgaria");
         accountClient1.setAddress("SomeAddress");
-        accountClient1.setAccountClientStatus(accountClientStatus);
-        accountClient1.setUser(user1);
+        accountClient1.setAccountClientStatus(AccountClientStatusData.accountClientStatuses.get(0));
+        accountClient1.setUser(UserData.users.get(0));
         accountClient1.setCode(12);
         accountClient1.setName("dataBase account1");
         accountClient1.setDescription("description of the account");
-        accountClient1.setID(1);
+        accountClient1.setID((long) 1);
 
 
         UserStatus userStatus2 = new UserStatus();
@@ -56,7 +55,7 @@ public class AccountData {
         accountClient2.setCode(123);
         accountClient2.setName("dataBase account1");
         accountClient2.setDescription("description of the account");
-        accountClient2.setID(2);
+        accountClient2.setID((long) 2);
 
 
         UserStatus userStatus3 = new UserStatus();
@@ -77,7 +76,7 @@ public class AccountData {
         accountClient3.setCode(122);
         accountClient3.setName("dataBase account1");
         accountClient3.setDescription("description of the account");
-        accountClient3.setID(3);
+        accountClient3.setID((long) 3);
 
 
         UserStatus userStatus4 = new UserStatus();
@@ -98,7 +97,7 @@ public class AccountData {
         accountClient4.setCode(152);
         accountClient4.setName("dataBase account1");
         accountClient4.setDescription("description of the account");
-        accountClient4.setID(4);
+        accountClient4.setID((long) 4);
 
 
         UserStatus userStatus5 = new UserStatus();
@@ -119,7 +118,7 @@ public class AccountData {
         accountClient5.setCode(1255);
         accountClient5.setName("dataBase account1");
         accountClient5.setDescription("description of the account");
-        accountClient5.setID(5);
+        accountClient5.setID((long) 5);
 
 
         UserStatus userStatus6 = new UserStatus();
@@ -140,7 +139,7 @@ public class AccountData {
         accountClient6.setCode(126);
         accountClient6.setName("dataBase account1");
         accountClient6.setDescription("description of the account");
-        accountClient6.setID(6);
+        accountClient6.setID((long) 6);
 
 
         UserStatus userStatus7 = new UserStatus();
@@ -161,7 +160,7 @@ public class AccountData {
         accountClient7.setCode(545);
         accountClient7.setName("dataBase account1");
         accountClient7.setDescription("description of the account");
-        accountClient7.setID(7);
+        accountClient7.setID((long) 7);
 
         accountClients.add(accountClient1);
         accountClients.add(accountClient2);
@@ -171,7 +170,7 @@ public class AccountData {
         accountClients.add(accountClient6);
         accountClients.add(accountClient7);
 
-        accountClientMap = accountClients
+        accountClientsMap = accountClients
                 .stream()
                 .collect(Collectors.toMap(AccountClient::getID, item -> item));
     }

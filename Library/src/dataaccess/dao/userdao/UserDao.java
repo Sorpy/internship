@@ -11,10 +11,10 @@ public interface UserDao {
     User update(User entity);
     List<User> update(List<User> entity);
 
-    void delete(long id);
+    void delete(Long id);
     void delete(User entity);
     void delete(List<Long> idList);
 
     List<User> find();
-    User find(long id);
+    User find(Long id);
 }
