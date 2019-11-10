@@ -7,7 +7,6 @@
     <list default="true" id="883bc5f3-6951-4f7a-9ad9-6eb24b31d106" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,38 +17,25 @@
       <FILTER>data.entity.*</FILTER>
     </SUITE>
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AccountClientProcessorImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/business/processor/accountclientprocessor/AccountClientProcessorImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountClientDaoImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/accountclientdao/AccountClientDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#1080#1081#0" expanded="true" />
-                <element signature="e#1107#1108#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseParamConverterImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/business/converter/common/BaseParamConverterImpl.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/business/converter/common/BaseResultConverterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
+              <caret line="28" column="42" lean-forward="true" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/business/converter/common/BaseParamConverterImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,92 +43,90 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Persistent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data/entity/Persistent.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/presentation/service/accountclientservice/AccountClientServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="339">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data/common/APIResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
-                <element signature="e#94#95#0" expanded="true" />
-                <element signature="e#119#120#0" expanded="true" />
-                <element signature="e#153#154#0" expanded="true" />
+                <element signature="e#158#159#0" expanded="true" />
+                <element signature="e#198#199#0" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersistentNamed.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data/entity/PersistentNamed.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="e#250#251#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountClientParam.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="34">
+              <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
               <folding>
-                <element signature="e#526#527#0" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#738#739#0" expanded="true" />
+                <element signature="e#782#783#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseNamedParam.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/business/converter/BaseNamedParam.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/reflect/FieldUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="14" />
+            <state relative-caret-position="271">
+              <caret line="689" selection-start-line="689" selection-end-line="689" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/reflect/MemberUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/StringUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="372" selection-start-line="372" selection-end-line="372" />
               <folding>
-                <element signature="e#247#248#0" expanded="true" />
-                <element signature="e#274#275#0" expanded="true" />
+                <element signature="e#13577#13578#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestRunner.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/data/entity/TestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="143" selection-start-line="143" selection-end-line="143" />
+            <state relative-caret-position="190">
+              <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data/entity/Account.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/Validate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-              <folding>
-                <element signature="e#352#353#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
-                <element signature="e#449#450#0" expanded="true" />
-                <element signature="e#1457#1458#0" expanded="true" />
-                <element signature="e#1491#1492#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SkipField.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/business/converter/common/SkipField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="27" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="227">
+              <caret line="159" selection-start-line="159" selection-end-line="159" />
             </state>
           </provider>
         </entry>
@@ -156,8 +140,8 @@
         <option value="JUnit5 Test Class" />
         <option value="Kotlin File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -173,7 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/business/processor/genreprocessor/GenreProcessor.java" />
         <option value="$PROJECT_DIR$/src/business/processor/orderprocessor/OrderProcessor.java" />
         <option value="$PROJECT_DIR$/src/business/processor/orderprocessor/OrderProcessorImpl.java" />
         <option value="$PROJECT_DIR$/src/business/processor/genreprocessor/GenreProcessorImpl.java" />
@@ -194,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/data/entity/NamedPersistent.java" />
         <option value="$PROJECT_DIR$/src/data/entity/Persistent.java" />
         <option value="$PROJECT_DIR$/src/business/converter/common/BaseParamConverter.java" />
-        <option value="$PROJECT_DIR$/src/business/converter/common/BaseResultConverterImpl.java" />
         <option value="$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParamConverter.java" />
         <option value="$PROJECT_DIR$/src/data/entity/PersistentNamed.java" />
         <option value="$PROJECT_DIR$/src/dataaccess/dao/accountclientdao/AccountClientData.java" />
@@ -219,27 +201,26 @@
         <option value="$PROJECT_DIR$/src/business/converter/accountclient/AccountClientResultConverter.java" />
         <option value="$PROJECT_DIR$/src/business/converter/accountclient/AccountClientResultConverterImpl.java" />
         <option value="$PROJECT_DIR$/src/business/converter/accountlibrarian/AccountLibrarianResultConverterImpl.java" />
-        <option value="$PROJECT_DIR$/src/data/entity/TestRunner.java" />
         <option value="$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParamConverterImpl.java" />
         <option value="$PROJECT_DIR$/src/data/entity/Account.java" />
-        <option value="$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParam.java" />
+        <option value="$PROJECT_DIR$/src/business/converter/common/SuperClassAccessor.java" />
         <option value="$PROJECT_DIR$/src/business/converter/common/BaseParamConverterImpl.java" />
+        <option value="$PROJECT_DIR$/src/business/converter/common/BaseResultConverterImpl.java" />
+        <option value="$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParam.java" />
+        <option value="$PROJECT_DIR$/src/data/entity/TestRunner.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="800" />
-    <option name="width" value="800" />
-    <option name="height" value="860" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,22 +253,6 @@
               <item name="business" type="462c0819:PsiDirectoryNode" />
               <item name="converter" type="462c0819:PsiDirectoryNode" />
               <item name="accountclient" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="converter" type="462c0819:PsiDirectoryNode" />
-              <item name="accountlibrarian" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="converter" type="462c0819:PsiDirectoryNode" />
-              <item name="accountlibrarianstatus" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Library" type="b2602c69:ProjectViewProjectNode" />
@@ -356,6 +321,13 @@
               <item name="Library" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="presentation" type="462c0819:PsiDirectoryNode" />
+              <item name="jsonconverter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="presentation" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -374,6 +346,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -384,7 +358,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../commons-lang3-3.9.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jackson-databind-2.10.1.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -427,6 +401,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="data.entity.model.Application" />
@@ -434,6 +411,9 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="TestRunnerTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library" />
@@ -443,25 +423,20 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="data.entity" />
       <option name="MAIN_CLASS_NAME" value="data.entity.TestRunnerTest" />
       <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Application" />
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.TestRunnerTest.test1" />
-      <item itemvalue="Application.Application" />
     </list>
     <recent_temporary>
       <list>
@@ -490,69 +465,67 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32882273" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32882273" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.45872802" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32882273" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19344473" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20202559" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3991881" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.10218509" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32827735" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32882273" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.4582882" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39869988" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32882273" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32882273" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32882273" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32882273" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.10218509" />
+      <window_info anchor="right" id="Maven" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32882273" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.45872802" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16902314" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32882273" />
+      <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32882273" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.45872802" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3991881" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32882273" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32882273" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.32969153" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32882273" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32882273" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -563,8 +536,13 @@
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/business/converter/common/BaseResultConverterImpl.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -576,65 +554,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/presentation/service/accountclientstatusservive/AccountClientStatusServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/accountclientdao/AccountClientData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="138" column="36" selection-start-line="138" selection-start-column="36" selection-end-line="138" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/accountclientstatusdao/AccountClientStatusData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/accountlibrariandao/AccountLibrarianData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/accountlibrarianstatusdao/AccountLibrarianStatusData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/authordao/AuthorData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/bookdao/BookData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/bookstatusdao/BookStatusData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/departmentdao/DepartmentData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -663,13 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/IllegalConvertException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -685,20 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/BaseResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/BaseNamedResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/business/converter/common/BaseParamConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -706,55 +604,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/userdao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jackson-core-2.10.0.jar!/com/fasterxml/jackson/core/TreeCodec.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jackson-core-2.10.0.jar!/com/fasterxml/jackson/core/ObjectCodec.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jackson-core-2.10.0.jar!/com/fasterxml/jackson/core/JsonFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jackson-databind-2.10.0.jar!/com/fasterxml/jackson/databind/MappingJsonFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../jackson-databind-2.10.0.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="876" selection-start-line="876" selection-end-line="876" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentation/jsonconverter/Serialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../jackson-core-2.10.0.jar!/com/fasterxml/jackson/core/TreeCodec.class" />
+    <entry file="jar://$PROJECT_DIR$/../../../jackson-core-2.10.0.jar!/com/fasterxml/jackson/core/ObjectCodec.class" />
+    <entry file="jar://$PROJECT_DIR$/../../../jackson-core-2.10.0.jar!/com/fasterxml/jackson/core/JsonFactory.class" />
+    <entry file="jar://$PROJECT_DIR$/../../../jackson-databind-2.10.0.jar!/com/fasterxml/jackson/databind/MappingJsonFactory.class" />
+    <entry file="jar://$PROJECT_DIR$/../../../jackson-databind-2.10.0.jar!/com/fasterxml/jackson/databind/ObjectMapper.class" />
     <entry file="file://$PROJECT_DIR$/src/data/entity/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -783,48 +637,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/accountclient/AccountClientResultConverterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="25" column="73" lean-forward="true" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/business/converter/accountlibrarian/AccountLibrarianResultConverterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="12" column="83" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/common/BaseResultConverterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/BaseParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParamConverterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/entity/AccountClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="3" selection-start-column="3" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -835,56 +651,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../commons-lang3-3.9.jar!/org/apache/commons/lang3/Validate.class">
+    <entry file="jar://$PROJECT_DIR$/../../../commons-lang3-3.9.jar!/org/apache/commons/lang3/Validate.class" />
+    <entry file="jar://$PROJECT_DIR$/../../../commons-lang3-3.9.jar!/org/apache/commons/lang3/reflect/FieldUtils.class" />
+    <entry file="file://$PROJECT_DIR$/src/business/converter/common/SkipField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../commons-lang3-3.9.jar!/org/apache/commons/lang3/reflect/FieldUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="285" selection-start-line="285" selection-end-line="285" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/common/APIResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="102">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="27" />
           <folding>
-            <element signature="e#131#132#0" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-            <element signature="e#198#199#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/presentation/service/accountclientservice/AccountClientServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/presentation/jsonconverter/Serialization.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/entity/TestRunner.java">
+    <entry file="file://$PROJECT_DIR$/src/business/converter/IllegalConvertException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        <state relative-caret-position="68">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/entity/Persistent.java">
+    <entry file="file://$PROJECT_DIR$/src/business/converter/BaseParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#185#186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/BaseNamedParam.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#94#95#0" expanded="true" />
-            <element signature="e#119#120#0" expanded="true" />
-            <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -899,81 +707,214 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/BaseNamedParam.java">
+    <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/ClassUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="169">
+          <caret line="525" selection-start-line="525" selection-end-line="525" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/common/SuperClassAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
-            <element signature="e#247#248#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/userdao/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/data/entity/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="357">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
-            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/common/SkipField.java">
+    <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/accountclientstatusdao/AccountClientStatusDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/entity/AccountClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="27" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParamConverterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParam.java">
+    <entry file="file://$PROJECT_DIR$/src/data/entity/Persistent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/converter/common/BaseParamConverterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/business/processor/accountclientprocessor/AccountClientProcessorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#119#120#0" expanded="true" />
+            <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataaccess/dao/accountclientdao/AccountClientDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="153">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#1080#1081#0" expanded="true" />
             <element signature="e#1107#1108#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/processor/accountclientprocessor/AccountClientProcessorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/BaseResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/BaseNamedResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/accountclient/AccountClientResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/accountclient/AccountClientResultConverterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="372" selection-start-line="372" selection-end-line="372" />
+          <folding>
+            <element signature="e#13577#13578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/Validate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/reflect/MemberUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../New folder/commons-lang3-3.9/commons-lang3-3.9-sources.jar!/org/apache/commons/lang3/reflect/FieldUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="689" selection-start-line="689" selection-end-line="689" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/presentation/service/accountclientservice/AccountClientServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/common/APIResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/common/BaseParamConverterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/common/BaseResultConverterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="28" column="42" lean-forward="true" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/business/converter/accountclient/AccountClientParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding>
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/entity/TestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1041,7 +982,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jackson-databind-2.10.0</last-edited>
+          <last-edited>commons-lang3-3.9-sources</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

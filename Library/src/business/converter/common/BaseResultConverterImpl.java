@@ -15,13 +15,22 @@ public abstract class BaseResultConverterImpl <Tin,Tout> implements BaseResultCo
 
     @Override
     public Tout convertStandart(Tin entity, Tout result) {
-        HashMap entityInfo = objectMapper.convertValue(entity,HashMap.class);
-        HashMap resultInfo = objectMapper.convertValue(result,HashMap.class);
+        Map<String, Field> entityInfo = new HashMap<>();
+        for (Field field : getAllFieldsList(entity.getClass())) {
+            field.setAccessible(true);
+            entityInfo.put(field.getName(), field);
+        }
+        Map<String, Field> resultInfo = new HashMap<>();
+        for (Field field : getAllFieldsList(result.getClass())) {
+            field.setAccessible(true);
+            resultInfo.put(field.getName(), field);
+        }
+
         entityInfo.forEach((key,value)-> {
             try {
 
                 if (resultInfo.containsKey(key)) {
-                    writeField(result,(String) key,value,true);
+                    writeField(result, key,value.get(entity),true);
                 }
             } catch (IllegalAccessException e) {
                 System.out.println(e);

@@ -6,7 +6,6 @@ import data.entity.AccountClientStatus;
 import data.entity.User;
 
 public class AccountClientParam extends BaseNamedParam {
-    @SkipField
     private String firstName;
     private String secondName;
     private String lastName;

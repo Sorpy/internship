@@ -39,7 +39,7 @@ public class TestRunner {
 
         AccountClientParam accountClientParam2 = new AccountClientParam();
 
-        accountClientParam2.setUserId((long) 1);
+        accountClientParam2.setUserId((long) 15);
         accountClientParam2.setFirstName("Name");
         accountClientParam2.setSecondName("OtherName");
         accountClientParam2.setLastName("ThirdName");

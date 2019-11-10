@@ -8,28 +8,24 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.apache.commons.lang3.reflect.FieldUtils.writeField;
+import static org.apache.commons.lang3.reflect.FieldUtils.*;
 
 public abstract class BaseParamConverterImpl <Tin,Tout> implements BaseParamConverter<Tin,Tout> {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public Tout convertStandart(Tin param, Tout entity) {
-        /*
+
         Map<String, Field> paramInfo = new HashMap<>();
-        for (Field field : param.getClass().getDeclaredFields()) {
+        for (Field field : getAllFieldsList(param.getClass())) {
             field.setAccessible(true);
             paramInfo.put(field.getName(), field);
         }
         Map<String, Field> entityInfo = new HashMap<>();
-        for (Field field : entity.getClass().getSuperclass().getDeclaredFields()) {
+        for (Field field : getAllFieldsList(entity.getClass())) {
             field.setAccessible(true);
             entityInfo.put(field.getName(), field);
         }
-        */
-        HashMap paramInfo = objectMapper.convertValue(entity,);
-        HashMap entityInfo = objectMapper.convertValue(param, HashMap.class);
-
 
         paramInfo.forEach((key, value) -> {
             try {
