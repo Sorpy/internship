@@ -1,14 +1,17 @@
 package business.converter;
 
-public class BaseParam {
-    private Long ID;
+import business.converter.common.SkipField;
 
-    public Long getID() {
-        return ID;
+public class BaseParam {
+    @SkipField
+    private Long id;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public void setId(Long id) {
+        this.id = id;
     }
 }
 

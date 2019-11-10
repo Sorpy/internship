@@ -1,4 +1,4 @@
 package data.entity;
 
-public class Genre extends NamedPersistent{
+public class Genre extends PersistentNamed {
 }

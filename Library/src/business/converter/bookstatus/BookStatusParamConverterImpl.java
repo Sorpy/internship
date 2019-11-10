@@ -1,8 +1,6 @@
 package business.converter.bookstatus;
 
 import data.entity.BookStatus;
-import dataaccess.dao.bookstatusdao.BookStatusDao;
-import dataaccess.dao.bookstatusdao.BookStatusDaoImpl;
 
 public class BookStatusParamConverterImpl implements BookStatusParamConverter {
 
@@ -15,7 +13,7 @@ public class BookStatusParamConverterImpl implements BookStatusParamConverter {
             } else {
                 entity = new BookStatus();
                 entity.setCode(param.getCode());
-                entity.setID(param.getID());
+                entity.setId(param.getId());
             }
             entity.setName(param.getName());
             entity.setDescription(param.getDescription());

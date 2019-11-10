@@ -2,9 +2,14 @@ package presentation.service.accountclientservice;
 
 import business.converter.accountclient.AccountClientParam;
 import business.converter.accountclient.AccountClientResult;
+import business.converter.common.BaseParamConverter;
+import business.converter.common.BaseParamConverterImpl;
+import business.converter.common.BaseResultConverter;
+import business.converter.common.BaseResultConverterImpl;
 import business.processor.accountclientprocessor.AccountClientProcessor;
 import business.processor.accountclientprocessor.AccountClientProcessorImpl;
 import data.common.APIResponse;
+import data.entity.AccountClient;
 import presentation.jsonconverter.Serialization;
 
 import java.util.List;
@@ -12,7 +17,6 @@ import java.util.List;
 public class AccountClientServiceImpl implements AccountClientService {
     private Serialization serialization = new Serialization();
     private AccountClientProcessor accountClientProcessor = new AccountClientProcessorImpl();
-
 
     @Override
     public APIResponse findByPK(Long id) {
@@ -26,8 +30,10 @@ public class AccountClientServiceImpl implements AccountClientService {
             response.setText("Something went wrong " + e.getMessage());
             response.setResult(false);
         }
+
         return response;
     }
+
 
     @Override
     public APIResponse findByName(String name){

@@ -8,7 +8,7 @@ public class AccountClientStatusResultConverterImpl implements AccountClientStat
         AccountClientStatusResult accountClientStatusResult = new AccountClientStatusResult();
         accountClientStatusResult.setCode(param.getCode());
         accountClientStatusResult.setDescription(param.getDescription());
-        accountClientStatusResult.setID(param.getID());
+        accountClientStatusResult.setId(param.getId());
         accountClientStatusResult.setName(param.getName());
         return accountClientStatusResult;
     }

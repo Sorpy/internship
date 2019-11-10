@@ -8,7 +8,7 @@ public class AuthorResultConverterImpl implements AuthorResultConverter{
         AuthorResult authorResult = new AuthorResult();
         authorResult.setCode(param.getCode());
         authorResult.setDescription(param.getDescription());
-        authorResult.setID(param.getID());
+        authorResult.setId(param.getId());
         authorResult.setName(param.getName());
         return authorResult;
     }

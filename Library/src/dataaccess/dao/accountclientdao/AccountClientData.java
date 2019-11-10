@@ -31,10 +31,10 @@ public class AccountClientData {
         accountClient1.setAddress("SomeAddress");
         accountClient1.setAccountClientStatus(AccountClientStatusData.accountClientStatuses.get(0));
         accountClient1.setUser(UserData.users.get(0));
-        accountClient1.setCode(12);
+        accountClient1.setCode("AKK");
         accountClient1.setName("dataBase account1");
         accountClient1.setDescription("description of the account");
-        accountClient1.setID((long) 1);
+        accountClient1.setId((long) 1);
 
 
         UserStatus userStatus2 = new UserStatus();
@@ -52,10 +52,10 @@ public class AccountClientData {
         accountClient2.setAddress("SomeAddress");
         accountClient2.setAccountClientStatus(accountClientStatus2);
         accountClient2.setUser(user2);
-        accountClient2.setCode(123);
+        accountClient2.setCode("AKK5");
         accountClient2.setName("dataBase account1");
         accountClient2.setDescription("description of the account");
-        accountClient2.setID((long) 2);
+        accountClient2.setId((long) 2);
 
 
         UserStatus userStatus3 = new UserStatus();
@@ -73,10 +73,10 @@ public class AccountClientData {
         accountClient3.setAddress("SomeAddress");
         accountClient3.setAccountClientStatus(accountClientStatus3);
         accountClient3.setUser(user3);
-        accountClient3.setCode(122);
+        accountClient3.setCode("AKK6");
         accountClient3.setName("dataBase account1");
         accountClient3.setDescription("description of the account");
-        accountClient3.setID((long) 3);
+        accountClient3.setId((long) 3);
 
 
         UserStatus userStatus4 = new UserStatus();
@@ -94,10 +94,10 @@ public class AccountClientData {
         accountClient4.setAddress("SomeAddress");
         accountClient4.setAccountClientStatus(accountClientStatus4);
         accountClient4.setUser(user4);
-        accountClient4.setCode(152);
+        accountClient4.setCode("AKK8");
         accountClient4.setName("dataBase account1");
         accountClient4.setDescription("description of the account");
-        accountClient4.setID((long) 4);
+        accountClient4.setId((long) 4);
 
 
         UserStatus userStatus5 = new UserStatus();
@@ -115,10 +115,10 @@ public class AccountClientData {
         accountClient5.setAddress("SomeAddress");
         accountClient5.setAccountClientStatus(accountClientStatus5);
         accountClient5.setUser(user5);
-        accountClient5.setCode(1255);
+        accountClient5.setCode("AK5K");
         accountClient5.setName("dataBase account1");
         accountClient5.setDescription("description of the account");
-        accountClient5.setID((long) 5);
+        accountClient5.setId((long) 5);
 
 
         UserStatus userStatus6 = new UserStatus();
@@ -136,10 +136,10 @@ public class AccountClientData {
         accountClient6.setAddress("SomeAddress");
         accountClient6.setAccountClientStatus(accountClientStatus6);
         accountClient6.setUser(user6);
-        accountClient6.setCode(126);
+        accountClient6.setCode("AK55K");
         accountClient6.setName("dataBase account1");
         accountClient6.setDescription("description of the account");
-        accountClient6.setID((long) 6);
+        accountClient6.setId((long) 6);
 
 
         UserStatus userStatus7 = new UserStatus();
@@ -157,10 +157,10 @@ public class AccountClientData {
         accountClient7.setAddress("SomeAddress");
         accountClient7.setAccountClientStatus(accountClientStatus7);
         accountClient7.setUser(user7);
-        accountClient7.setCode(545);
+        accountClient7.setCode("AK7K");
         accountClient7.setName("dataBase account1");
         accountClient7.setDescription("description of the account");
-        accountClient7.setID((long) 7);
+        accountClient7.setId((long) 7);
 
         accountClients.add(accountClient1);
         accountClients.add(accountClient2);
@@ -172,6 +172,6 @@ public class AccountClientData {
 
         accountClientsMap = accountClients
                 .stream()
-                .collect(Collectors.toMap(AccountClient::getID, item -> item));
+                .collect(Collectors.toMap(AccountClient::getId, item -> item));
     }
 }

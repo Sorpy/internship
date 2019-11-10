@@ -5,7 +5,6 @@ import data.entity.Author;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class AuthorData {
@@ -14,24 +13,24 @@ public class AuthorData {
 
     static {
         Author author1 = new Author();
-        author1.setCode(45);
+        author1.setCode("AKPs");
         author1.setDescription("something");
         author1.setName("Author");
         author1.setAuthorName("Author Name 1");
-        author1.setID((long) 1);
+        author1.setId((long) 1);
 
         Author author2 = new Author();
         author2.setAuthorName("Author Name 2");
-        author2.setCode(46);
+        author2.setCode("AKPsdd");
         author2.setDescription("author author");
         author2.setName("autjor autroh");
-        author2.setID((long) 2);
+        author2.setId((long) 2);
 
         authors.add(author1);
         authors.add(author2);
 
         authorMap = authors
                 .stream()
-                .collect(Collectors.toMap(Author::getID,item->item));
+                .collect(Collectors.toMap(Author::getId, item->item));
     }
 }

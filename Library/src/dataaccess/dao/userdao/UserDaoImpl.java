@@ -9,7 +9,7 @@ import static dataaccess.dao.userdao.UserData.*;
 public class UserDaoImpl implements UserDao{
     @Override
     public User save(User entity) {
-        userMap.putIfAbsent(entity.getID(), entity);
+        userMap.putIfAbsent(entity.getId(), entity);
         users.add(entity);
 
         return entity;
@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public User update(User entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         users.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class UserDaoImpl implements UserDao{
     public User find(Long id) {
         return users
                 .stream()
-                .filter(a -> a.getID().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst().get();
     }
 }

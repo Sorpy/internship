@@ -7,7 +7,7 @@ public class UserGroupResultConverterImpl implements UserGroupResultConverter{
     public UserGroupResult convert(UserGroup param) {
         UserGroupResult userGroupResult = new UserGroupResult();
         userGroupResult.setUserGroupStatus(param.getUserGroupStatus());
-        userGroupResult.setID(param.getID());
+        userGroupResult.setId(param.getId());
         return userGroupResult;
     }
 }

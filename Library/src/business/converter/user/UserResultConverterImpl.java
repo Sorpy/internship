@@ -9,7 +9,7 @@ public class UserResultConverterImpl implements UserResultConverter {
         userResult.setPassword(param.getPassword());
         userResult.setUsername(param.getUsername());
         userResult.setUserStatus(param.getUserStatus());
-        userResult.setID(param.getID());
+        userResult.setId(param.getId());
         return userResult;
     }
 }

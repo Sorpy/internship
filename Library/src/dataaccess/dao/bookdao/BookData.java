@@ -23,8 +23,8 @@ public class BookData {
         book1.setGenre(GenreData.genres.get(0));
         book1.setPrice(15.2);
         book1.setYear(1999);
-        book1.setCode(45);
-        book1.setID((long)55);
+        book1.setCode("AKPVs");
+        book1.setId((long)55);
         book1.setDescription("asdasda");
         book1.setName("something");
 
@@ -36,8 +36,8 @@ public class BookData {
         book2.setGenre(GenreData.genres.get(1));
         book2.setPrice(15.2);
         book2.setYear(1999);
-        book2.setCode(45);
-        book2.setID((long)5);
+        book2.setCode("A44KPs");
+        book2.setId((long)5);
         book2.setDescription("asdasda");
         book2.setName("something");
 

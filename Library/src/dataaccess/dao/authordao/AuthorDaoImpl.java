@@ -9,7 +9,7 @@ import static dataaccess.dao.authordao.AuthorData.*;
 public class AuthorDaoImpl implements AuthorDao {
     @Override
     public Author save(Author entity) {
-        authorMap.putIfAbsent(entity.getID(), entity);
+        authorMap.putIfAbsent(entity.getId(), entity);
         authors.add(entity);
 
         return entity;
@@ -23,7 +23,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Override
     public Author update(Author entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         authors.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class AuthorDaoImpl implements AuthorDao {
     public Author find(Long id) {
         return authors
                 .stream()
-                .filter(a -> a.getID().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst().get();
     }
 }

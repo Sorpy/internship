@@ -2,7 +2,7 @@ package data.entity;
 
 import java.util.Date;
 
-public class Order extends NamedPersistent {
+public class Order extends PersistentNamed {
     private Date date;
     private AccountClient accountClient;
     private AccountLibrarian accountLibrarian;

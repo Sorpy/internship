@@ -1,4 +1,4 @@
 package data.entity;
 
-public class UserStatus extends NamedPersistent {
+public class UserStatus extends PersistentNamed {
 }

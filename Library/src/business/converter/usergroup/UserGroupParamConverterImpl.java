@@ -2,7 +2,6 @@ package business.converter.usergroup;
 
 import data.entity.UserGroup;
 import dataaccess.dao.usergroupdao.UserGroupDao;
-import dataaccess.dao.usergroupdao.UserGroupDaoImpl;
 
 public class UserGroupParamConverterImpl implements UserGroupParamConverter {
     private UserGroupDao userGroupDao;
@@ -19,7 +18,7 @@ public class UserGroupParamConverterImpl implements UserGroupParamConverter {
     public UserGroup convert(UserGroupParam param) {
 
         UserGroup userGroup = new UserGroup();
-        userGroup.setID(param.getID());
+        userGroup.setId(param.getId());
         userGroup.setUserGroupStatus(param.getUserGroupStatus());
         return userGroup;
     }

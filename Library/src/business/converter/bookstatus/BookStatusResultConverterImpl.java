@@ -9,7 +9,7 @@ public class BookStatusResultConverterImpl implements BookStatusResultConverter{
         bookStatusResult.setCode(param.getCode());
         bookStatusResult.setName(param.getName());
         bookStatusResult.setDescription(param.getDescription());
-        bookStatusResult.setID(param.getID());
+        bookStatusResult.setId(param.getId());
         return bookStatusResult;
     }
 }

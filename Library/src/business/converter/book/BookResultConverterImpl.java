@@ -9,7 +9,7 @@ public class BookResultConverterImpl implements BookResultConverter {
             bookResult.setBookName(param.getBookName());
             bookResult.setAuthorName(param.getAuthor().getAuthorName());
             bookResult.setBookStatusName(param.getBookStatus().getName());
-            bookResult.setBookStatusId(param.getBookStatus().getID());
+            bookResult.setBookStatusId(param.getBookStatus().getId());
             bookResult.setDepartmentName(param.getDepartment().getName());
             bookResult.setGenreName(param.getAuthor().getAuthorName());
             bookResult.setPrice(param.getPrice());
@@ -17,7 +17,7 @@ public class BookResultConverterImpl implements BookResultConverter {
             bookResult.setCode(param.getCode());
             bookResult.setName(param.getName());
             bookResult.setDescription(param.getDescription());
-            bookResult.setID(param.getID());
+            bookResult.setId(param.getId());
             return bookResult;
     }
 }

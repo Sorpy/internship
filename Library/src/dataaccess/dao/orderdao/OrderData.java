@@ -20,14 +20,14 @@ public class OrderData {
         order1.setBook(BookData.books.get(0));
         order1.setAccountLibrarian(AccountLibrarianData.accountLibrarians.get(0));
         order1.setAccountClient(AccountClientData.accountClients.get(0));
-        order1.setCode(54);
+        order1.setCode("AKP78966654541s");
         order1.setDescription("asdasd");
         order1.setName("asdasdasd");
-        order1.setID((long)0);
+        order1.setId((long)0);
 
         orders.add(order1);
         orderMap = orders
                 .stream()
-                .collect(Collectors.toMap(Order::getID,item->item));
+                .collect(Collectors.toMap(Order::getId, item->item));
     }
 }

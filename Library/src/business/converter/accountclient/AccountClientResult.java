@@ -115,4 +115,23 @@ public class AccountClientResult  extends BaseNamedResult {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+    @Override
+    public String toString() {
+        return "AccountClientResult{" +
+                "firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", accountClientStatusName='" + accountClientStatusName + '\'' +
+                ", userId=" + userId +
+                ", accountClientStatusId=" + accountClientStatusId +
+                '}';
+    }
 }

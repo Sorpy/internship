@@ -1,9 +1,6 @@
 package business.converter.accountlibrarianstatus;
 
-import data.entity.AccountLibrarian;
 import data.entity.AccountLibrarianStatus;
-import dataaccess.dao.accountlibrarianstatusdao.AccountLibrarianStatusDao;
-import dataaccess.dao.accountlibrarianstatusdao.AccountLibrarianStatusDaoImpl;
 
 public class AccountLibrarianStatusParamConverterImpl implements AccountLibrarianStatusParamConverter{
 
@@ -14,7 +11,7 @@ public class AccountLibrarianStatusParamConverterImpl implements AccountLibraria
             entity = oldEntity;
         } else {
             entity = new AccountLibrarianStatus();
-            entity.setID(param.getID());
+            entity.setId(param.getId());
             entity.setCode(param.getCode());
         }
         entity.setName(param.getName());

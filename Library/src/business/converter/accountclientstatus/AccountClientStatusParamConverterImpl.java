@@ -1,8 +1,6 @@
 package business.converter.accountclientstatus;
 
 import data.entity.AccountClientStatus;
-import dataaccess.dao.accountclientstatusdao.AccountClientStatusDao;
-import dataaccess.dao.accountclientstatusdao.AccountClientStatusDaoImpl;
 
 public class AccountClientStatusParamConverterImpl implements AccountClientStatusParamConverter {
 
@@ -14,7 +12,7 @@ public class AccountClientStatusParamConverterImpl implements AccountClientStatu
             entity = oldEntity;
         } else {
             entity = new AccountClientStatus();
-            entity.setID(param.getID());
+            entity.setId(param.getId());
             entity.setCode(param.getCode());
         }
         entity.setName(param.getName());

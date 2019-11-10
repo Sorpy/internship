@@ -7,8 +7,6 @@ import dataaccess.dao.accountlibrariandao.AccountLibrarianDao;
 import dataaccess.dao.accountlibrariandao.AccountLibrarianDaoImpl;
 import dataaccess.dao.bookdao.BookDao;
 import dataaccess.dao.bookdao.BookDaoImpl;
-import dataaccess.dao.orderdao.OrderDao;
-import dataaccess.dao.orderdao.OrderDaoImpl;
 
 public class OrderParamConverterImpl implements OrderParamConverter{
     private AccountClientDao accountClientDao = new AccountClientDaoImpl();
@@ -24,7 +22,7 @@ public class OrderParamConverterImpl implements OrderParamConverter{
             entity = oldEntity;
         } else {
             entity = new Order();
-            entity.setID(param.getID());
+            entity.setId(param.getId());
             entity.setCode(param.getCode());
         }
         entity.setName(param.getName());

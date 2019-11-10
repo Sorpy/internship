@@ -20,7 +20,7 @@ public class AccountClientProcessorImpl implements AccountClientProcessor{
     @Override
     public AccountClientResult create(AccountClientParam param) throws IllegalAccessException {
         //try {
-           // if (find(param.getID()).getID() == param.getID()) throw new ExistingIDException("Element with this ID already exists");
+           // if (find(param.getId()).getId() == param.getId()) throw new ExistingIDException("Element with this ID already exists");
         //} catch (NoSuchElementException ignored){ }
         return accountClientResultConverter
                 .convert(accountClientDao
@@ -66,6 +66,7 @@ public class AccountClientProcessorImpl implements AccountClientProcessor{
 
     @Override
     public void update(List<AccountClientParam> param) {
+        param.forEach(clientParam -> update(clientParam.getId(),clientParam));
 
     }
 

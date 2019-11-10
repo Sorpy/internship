@@ -1,5 +1,7 @@
 package business.converter.accountclient;
 
+import business.converter.common.BaseResultConverter;
+import business.converter.common.BaseResultConverterImpl;
 import data.entity.AccountClient;
 
 import java.lang.reflect.Field;
@@ -14,64 +16,23 @@ import org.apache.commons.lang3.reflect.FieldUtils;
 
 import static org.apache.commons.lang3.reflect.FieldUtils.*;
 
-public class AccountClientResultConverterImpl implements AccountClientResultConverter {
+public class AccountClientResultConverterImpl extends BaseResultConverterImpl<AccountClient,AccountClientResult> implements AccountClientResultConverter {
 
 
     @Override
     public AccountClientResult convert(AccountClient param) throws IllegalAccessException {
         AccountClientResult accountClientResult = new AccountClientResult();
-        /*
-        accountClientResult.setFirstName(param.getFirstName());
-        accountClientResult.setSecondName(param.getSecondName());
-        accountClientResult.setLastName(param.getLastName());
-        accountClientResult.setAddress(param.getAddress());
-        accountClientResult.setCity(param.getCity());
-        accountClientResult.setCountry(param.getCountry());
-        accountClientResult.setEmail(param.getEmail());
-        accountClientResult.setAccountClientStatusId(param.getAccountClientStatus().getID());
-        accountClientResult.setAccountClientStatusName(param.getAccountClientStatus().getName());
-        accountClientResult.setPhone(param.getPhone());
-        accountClientResult.setID(param.getID());
-        accountClientResult.setUserId(param.getUser().getID());
-        accountClientResult.setUsername(param.getUser().getUsername());
-        accountClientResult.setName(param.getName());
-        accountClientResult.setCode(param.getCode());
-        accountClientResult.setDescription(param.getDescription());
-        */
-
-
-        List<Field> entityFields = getAllFieldsList(param.getClass());
-        List<Field> resultFields = getAllFieldsList(accountClientResult.getClass());
-        Map<String,Field> entityHashMap = new HashMap<>();
-        Map<String,Field> resultHashMap = new HashMap<>();
-
-
-
-        for (Field field :entityFields) {
-            entityHashMap.put(field.getName(),field);
-        }
-        for (Field field: resultFields){
-            resultHashMap.put(field.getName(),field);
-        }
-
-
-
-        entityHashMap.forEach((key, value) -> {
-            try {
-                writeField(accountClientResult,key,
-                        readDeclaredField(param,key,true),true);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        });
-        accountClientResult.setAccountClientStatusId(param.getAccountClientStatus().getID());
-        accountClientResult.setAccountClientStatusName(param.getAccountClientStatus().getName());
-        accountClientResult.setUserId(param.getUser().getID());
-        accountClientResult.setUsername(param.getUser().getUsername());
-
-
-
-
+        accountClientResult =convertStandart(param,accountClientResult);
+        accountClientResult = convertSpecific(param,accountClientResult);
         return accountClientResult;
+    }
+
+    @Override
+    public AccountClientResult convertSpecific(AccountClient entity, AccountClientResult result) {
+        result.setUsername(entity.getUser().getUsername());
+        result.setUserId(entity.getUser().getId());
+        result.setAccountClientStatusName(entity.getAccountClientStatus().getName());
+        result.setAccountClientStatusId(entity.getAccountClientStatus().getId());
+        return result;
     }
 }

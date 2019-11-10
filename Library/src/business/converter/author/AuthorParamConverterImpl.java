@@ -2,7 +2,6 @@ package business.converter.author;
 
 import data.entity.Author;
 import dataaccess.dao.authordao.AuthorDao;
-import dataaccess.dao.authordao.AuthorDaoImpl;
 
 public class AuthorParamConverterImpl implements AuthorParamConverter{
     private AuthorDao authorDao;
@@ -22,7 +21,7 @@ public class AuthorParamConverterImpl implements AuthorParamConverter{
             entity = oldEntity;
         } else {
             entity = new Author();
-            entity.setID(param.getID());
+            entity.setId(param.getId());
             entity.setCode(param.getCode());
         }
         entity.setName(param.getName());

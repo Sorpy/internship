@@ -9,7 +9,7 @@ public class GenreResultConverterImpl implements GenreResultConverter{
         genreResult.setCode(param.getCode());
         genreResult.setName(param.getName());
         genreResult.setDescription(param.getDescription());
-        genreResult.setID(param.getID());
+        genreResult.setId(param.getId());
         return genreResult;
     }
 }

@@ -9,7 +9,7 @@ import static dataaccess.dao.departmentdao.DepartmentData.*;
 public class DepartmentDaoImpl implements DepartmentDao {
     @Override
     public Department save(Department entity) {
-        departmentMap.putIfAbsent(entity.getID(), entity);
+        departmentMap.putIfAbsent(entity.getId(), entity);
         departments.add(entity);
 
         return entity;
@@ -23,7 +23,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
     @Override
     public Department update(Department entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         departments.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
     public Department find(Long id) {
         return departments
                 .stream()
-                .filter(a -> a.getID().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst().get();
     }
 }

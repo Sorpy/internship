@@ -9,7 +9,7 @@ import static dataaccess.dao.bookstatusdao.BookStatusData.*;
 public class BookStatusDaoImpl implements BookStatusDao {
     @Override
     public BookStatus save(BookStatus entity) {
-        bookStatusMap.putIfAbsent(entity.getID(), entity);
+        bookStatusMap.putIfAbsent(entity.getId(), entity);
         bookStatuses.add(entity);
 
         return entity;
@@ -23,7 +23,7 @@ public class BookStatusDaoImpl implements BookStatusDao {
 
     @Override
     public BookStatus update(BookStatus entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         bookStatuses.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class BookStatusDaoImpl implements BookStatusDao {
     public BookStatus find(Long id) {
         return bookStatuses
                 .stream()
-                .filter(a -> a.getID().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst().get();
     }
 }

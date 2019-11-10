@@ -11,7 +11,7 @@ public class AccountLibrarianDaoImpl implements AccountLibrarianDao {
     @Override
     public AccountLibrarian save(AccountLibrarian entity) {
         accountLibrarians.add(entity);
-        accountLibrarianMap.putIfAbsent(entity.getID(),entity);
+        accountLibrarianMap.putIfAbsent(entity.getId(),entity);
         return entity;
     }
 
@@ -23,7 +23,7 @@ public class AccountLibrarianDaoImpl implements AccountLibrarianDao {
 
     @Override
     public AccountLibrarian update(AccountLibrarian entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         accountLibrarians.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class AccountLibrarianDaoImpl implements AccountLibrarianDao {
     public AccountLibrarian find(Long id) {
         return accountLibrarians
                 .stream()
-                .filter(e -> e.getID().equals(id))
+                .filter(e -> e.getId().equals(id))
                 .findFirst().get();
     }
 

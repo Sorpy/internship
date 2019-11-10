@@ -1,19 +1,14 @@
 package data.entity;
 
 import business.converter.accountclient.AccountClientParam;
-import business.converter.accountclientstatus.AccountClientStatusParam;
+import business.converter.accountclient.AccountClientResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import dataaccess.dao.accountclientdao.AccountClientDao;
 import dataaccess.dao.accountclientdao.AccountClientDaoImpl;
-import dataaccess.dao.accountclientstatusdao.AccountClientStatusData;
-import dataaccess.dao.userdao.UserData;
 import presentation.service.accountclientservice.AccountClientService;
 import presentation.service.accountclientservice.AccountClientServiceImpl;
 import presentation.service.accountclientstatusservive.AccountClientStatusService;
 import presentation.service.accountclientstatusservive.AccountClientStatusServiceImpl;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TestRunner {
     public void test() throws JsonProcessingException {
@@ -34,16 +29,16 @@ public class TestRunner {
         accountClientParam.setCountry("Bulg");
         accountClientParam.setCity("Plovdiv");
         accountClientParam.setAddress("Some Adress");
-        accountClientParam.setCode(76756);
+        accountClientParam.setCode("sAA");
         accountClientParam.setName("AccountThing");
         accountClientParam.setDescription("Something");
-        accountClientParam.setID((long) 4);
+        accountClientParam.setId((long) 4);
             //System.out.println(accountClientService.create(accountClientParam).getText());
 
 
 
         AccountClientParam accountClientParam2 = new AccountClientParam();
-        accountClientParam2.setAccountClientStatusId((long)1);
+
         accountClientParam2.setUserId((long) 1);
         accountClientParam2.setFirstName("Name");
         accountClientParam2.setSecondName("OtherName");
@@ -53,10 +48,24 @@ public class TestRunner {
         accountClientParam2.setCountry("Bulg");
         accountClientParam2.setCity("Plovdiv");
         accountClientParam2.setAddress("Some Adress");
-        accountClientParam2.setCode(2332456);
+        accountClientParam2.setCode("aAA");
         accountClientParam2.setName("AccountThing");
         accountClientParam2.setDescription("Something");
-        accountClientParam2.setID((long) 9);
+        accountClientParam2.setId((long) 9);
+        accountClientParam2.setAccountClientStatusId((long)1);
+
+
+
+        AccountClient accountClient11 = new AccountClient();
+        accountClient11.setId((long)5);
+        accountClient11.setCode("A5K");
+        accountClient11.setName("asdasd");
+        accountClient11.setAddress("asdasdasdasdas");
+        accountClient11.setCountry("asdasd");
+        accountClient11.setCity("asdadsasd");
+        accountClient11.setEmail("asdasd");
+
+        AccountClientResult accountClientResult = new AccountClientResult();
 
 
         AccountClientStatus accountClientStatus3 = new AccountClientStatus();
@@ -71,10 +80,10 @@ public class TestRunner {
         accountClientParam3.setCountry("Bulg");
         accountClientParam3.setCity("Plovdiv");
         accountClientParam3.setAddress("Some Adress");
-        accountClientParam3.setCode(233323);
+        accountClientParam3.setCode("AKPaaaaas");
         accountClientParam3.setName("AccountThing");
         accountClientParam3.setDescription("Something");
-        accountClientParam3.setID((long) 10);
+        accountClientParam3.setId((long) 10);
 
         //List<AccountClientParam> accountClientParamList = new ArrayList<>();
         //accountClientParamList.add(accountClientParam2);
@@ -112,13 +121,13 @@ public class TestRunner {
         accountClientStatusParam2.setCode(156);
         accountClientStatusParam2.setDescription("the account is working");
         accountClientStatusParam2.setName("AdminStatus");
-        accountClientStatusParam2.setID(1);
+        accountClientStatusParam2.setId(1);
 
         accountClientStatusParam3.setStatus("client");
         accountClientStatusParam3.setCode(157);
         accountClientStatusParam3.setDescription("clientThings");
         accountClientStatusParam3.setName("ClientStatus");
-        accountClientStatusParam3.setID(2);
+        accountClientStatusParam3.setId(2);
 
         accountClientStatuses.add(accountClientStatusParam2);
         accountClientStatuses.add(accountClientStatusParam3);
@@ -127,6 +136,9 @@ public class TestRunner {
         */
         //System.out.println(accountClientService.listAll().getText());
         //System.out.println(accountClientService.findByParameter("getFirstName","Ivan").getText());
+        //System.out.println(accountClientService.create(accountClientParam2).getText());
+        //BaseResultConverter baseResultConverter = new BaseResultConverterImpl();
+        //System.out.println(baseResultConverter.convertStandart(accountClient,accountClientResult).toString());
         System.out.println(accountClientService.create(accountClientParam2).getText());
 
     }

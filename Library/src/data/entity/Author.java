@@ -1,6 +1,6 @@
 package data.entity;
 
-public class Author extends NamedPersistent {
+public class Author extends PersistentNamed {
     private String authorName;
 
     public String getAuthorName() {

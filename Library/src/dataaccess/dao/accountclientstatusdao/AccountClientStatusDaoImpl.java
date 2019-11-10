@@ -9,7 +9,7 @@ import static dataaccess.dao.accountclientstatusdao.AccountClientStatusData.*;
 public class AccountClientStatusDaoImpl implements AccountClientStatusDao {
     @Override
     public AccountClientStatus save(AccountClientStatus entity) {
-            accountClientStatusMap.putIfAbsent(entity.getID(),entity);
+            accountClientStatusMap.putIfAbsent(entity.getId(),entity);
         accountClientStatuses.add(entity);
 
         return entity;
@@ -23,7 +23,7 @@ public class AccountClientStatusDaoImpl implements AccountClientStatusDao {
 
     @Override
     public AccountClientStatus update(AccountClientStatus entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         accountClientStatuses.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class AccountClientStatusDaoImpl implements AccountClientStatusDao {
     public AccountClientStatus find(Long id) {
         return accountClientStatuses
                 .stream()
-                .filter(a -> a.getID().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst().get();
     }
 }

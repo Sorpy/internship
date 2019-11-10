@@ -1,6 +1,6 @@
 package data.entity;
 
-public class Book extends NamedPersistent {
+public class Book extends PersistentNamed {
     private String bookName;
     private Author author;
     private Genre genre;

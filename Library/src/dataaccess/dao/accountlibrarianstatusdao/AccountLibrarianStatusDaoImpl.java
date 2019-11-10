@@ -9,7 +9,7 @@ import static dataaccess.dao.accountlibrarianstatusdao.AccountLibrarianStatusDat
 public class AccountLibrarianStatusDaoImpl implements AccountLibrarianStatusDao{
     @Override
     public AccountLibrarianStatus save(AccountLibrarianStatus entity) {
-        accountLibrarianStatusMap.putIfAbsent(entity.getID(), entity);
+        accountLibrarianStatusMap.putIfAbsent(entity.getId(), entity);
         accountLibrarianStatuses.add(entity);
 
         return entity;
@@ -23,7 +23,7 @@ public class AccountLibrarianStatusDaoImpl implements AccountLibrarianStatusDao{
 
     @Override
     public AccountLibrarianStatus update(AccountLibrarianStatus entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         accountLibrarianStatuses.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class AccountLibrarianStatusDaoImpl implements AccountLibrarianStatusDao{
     public AccountLibrarianStatus find(Long id) {
         return accountLibrarianStatuses
                 .stream()
-                .filter(a -> a.getID().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst().get();
     }
 }

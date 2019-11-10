@@ -25,9 +25,9 @@ public class AccountLibrarianData {
         accountLibrarian1.setAddress("SomeAddress");
         accountLibrarian1.setAccountLibrarianStatus(AccountLibrarianStatusData.accountLibrarianStatuses.get(0));
         accountLibrarian1.setUser(UserData.users.get(1));
-        accountLibrarian1.setCode(1255);
+        accountLibrarian1.setCode("AaaaKP");
         accountLibrarian1.setName("dataBase account1");
         accountLibrarian1.setDescription("description of the account");
-        accountLibrarian1.setID((long) 5);
+        accountLibrarian1.setId((long) 5);
     }
 }

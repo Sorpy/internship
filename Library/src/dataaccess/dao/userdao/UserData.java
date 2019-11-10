@@ -16,19 +16,19 @@ public class UserData {
         user1.setUsername("UserName1");
         user1.setPassword("password1");
         user1.setUserStatus(null);
-        user1.setID((long) 0);
+        user1.setId((long) 0);
 
         User user2 = new User();
         user2.setUsername("UserName3");
         user2.setPassword("password1");
         user2.setUserStatus(null);
-        user2.setID((long) 1);
+        user2.setId((long) 1);
 
         User user3 = new User();
         user3.setUsername("UserName3");
         user3.setPassword("password1");
         user3.setUserStatus(null);
-        user3.setID((long) 2);
+        user3.setId((long) 2);
 
         users.add(user1);
         users.add(user2);
@@ -36,6 +36,6 @@ public class UserData {
 
         userMap = users
                 .stream()
-                .collect(Collectors.toMap(User::getID, item -> item));
+                .collect(Collectors.toMap(User::getId, item -> item));
     }
 }

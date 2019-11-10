@@ -9,7 +9,7 @@ import static dataaccess.dao.usergroupdao.UserGroupData.*;
 public class UserGroupDaoImpl implements UserGroupDao{
     @Override
     public UserGroup save(UserGroup entity) {
-        userGroupMap.putIfAbsent(entity.getID(), entity);
+        userGroupMap.putIfAbsent(entity.getId(), entity);
         userGroups.add(entity);
 
         return entity;
@@ -57,7 +57,7 @@ public class UserGroupDaoImpl implements UserGroupDao{
     public UserGroup find(long id) {
         return userGroups
                 .stream()
-                .filter(a -> a.getID()==id)
+                .filter(a -> a.getId()==id)
                 .findFirst().get();
     }
 }

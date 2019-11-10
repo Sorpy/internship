@@ -9,7 +9,7 @@ public class DepartmentResultConverterImpl implements DepartmentResultConverter 
         departmentResult.setCode(param.getCode());
         departmentResult.setName(param.getName());
         departmentResult.setDescription(param.getDescription());
-        departmentResult.setID(param.getID());
+        departmentResult.setId(param.getId());
         return departmentResult;
     }
 }

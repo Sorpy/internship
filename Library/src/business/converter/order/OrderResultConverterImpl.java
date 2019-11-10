@@ -9,10 +9,10 @@ public class OrderResultConverterImpl implements OrderResultConverter {
         orderResult.setCode(param.getCode());
         orderResult.setName(param.getName());
         orderResult.setDescription(param.getDescription());
-        orderResult.setID(param.getID());
-        orderResult.setAccountClientId(param.getAccountClient().getID());
-        orderResult.setAccountLibrarianId(param.getAccountLibrarian().getID());
-        orderResult.setBookId(param.getBook().getID());
+        orderResult.setId(param.getId());
+        orderResult.setAccountClientId(param.getAccountClient().getId());
+        orderResult.setAccountLibrarianId(param.getAccountLibrarian().getId());
+        orderResult.setBookId(param.getBook().getId());
         orderResult.setAccountClientName(param.getAccountClient().getFirstName() + " " + param.getAccountClient().getLastName());
         orderResult.setAccountLibrarianName(param.getAccountLibrarian().getFirstName() + " " + param.getAccountLibrarian().getLastName());
         orderResult.setBookName(param.getBook().getBookName());

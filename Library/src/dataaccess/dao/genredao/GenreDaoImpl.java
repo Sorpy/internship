@@ -9,7 +9,7 @@ import static dataaccess.dao.genredao.GenreData.*;
 public class GenreDaoImpl implements GenreDao {
     @Override
     public Genre save(Genre entity) {
-        genreMap.putIfAbsent(entity.getID(), entity);
+        genreMap.putIfAbsent(entity.getId(), entity);
         genres.add(entity);
 
         return entity;
@@ -23,7 +23,7 @@ public class GenreDaoImpl implements GenreDao {
 
     @Override
     public Genre update(Genre entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         genres.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class GenreDaoImpl implements GenreDao {
     public Genre find(Long id) {
         return genres
                 .stream()
-                .filter(a -> a.getID().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst().get();
     }
 }

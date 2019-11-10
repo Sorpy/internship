@@ -1,8 +1,6 @@
 package business.converter.department;
 
 import data.entity.Department;
-import dataaccess.dao.departmentdao.DepartmentDao;
-import dataaccess.dao.departmentdao.DepartmentDaoImpl;
 
 public class DepartmentParamConverterImpl implements DepartmentParamConverter {
 
@@ -14,7 +12,7 @@ public class DepartmentParamConverterImpl implements DepartmentParamConverter {
         } else {
             entity = new Department();
             entity.setCode(param.getCode());
-            entity.setID(param.getID());
+            entity.setId(param.getId());
         }
         entity.setName(param.getName());
         entity.setDescription(param.getDescription());

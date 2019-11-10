@@ -3,15 +3,12 @@ package business.converter.book;
 import data.entity.Book;
 import dataaccess.dao.authordao.AuthorDao;
 import dataaccess.dao.authordao.AuthorDaoImpl;
-import dataaccess.dao.bookdao.BookDao;
-import dataaccess.dao.bookdao.BookDaoImpl;
 import dataaccess.dao.bookstatusdao.BookStatusDao;
 import dataaccess.dao.bookstatusdao.BookStatusDaoImpl;
 import dataaccess.dao.departmentdao.DepartmentDao;
 import dataaccess.dao.departmentdao.DepartmentDaoImpl;
 import dataaccess.dao.genredao.GenreDao;
 import dataaccess.dao.genredao.GenreDaoImpl;
-import dataaccess.dao.genredao.GenreData;
 
 public class BookParamConverterImpl implements BookParamConverter {
     private BookStatusDao bookStatusDao = new BookStatusDaoImpl();
@@ -26,7 +23,7 @@ public class BookParamConverterImpl implements BookParamConverter {
             entity = oldEntity;
         } else {
             entity = new Book();
-            entity.setID(param.getID());
+            entity.setId(param.getId());
             entity.setCode(param.getCode());
         }
         entity.setName(param.getName());

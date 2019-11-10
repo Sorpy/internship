@@ -9,7 +9,7 @@ import static dataaccess.dao.orderdao.OrderData.*;
 public class OrderDaoImpl implements OrderDao{
     @Override
     public Order save(Order entity) {
-        orderMap.putIfAbsent(entity.getID(), entity);
+        orderMap.putIfAbsent(entity.getId(), entity);
         orders.add(entity);
 
         return entity;
@@ -23,7 +23,7 @@ public class OrderDaoImpl implements OrderDao{
 
     @Override
     public Order update(Order entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         orders.add(entity);
         return entity;
     }
@@ -58,7 +58,7 @@ public class OrderDaoImpl implements OrderDao{
     public Order find(Long id) {
         return orders
                 .stream()
-                .filter(a -> a.getID().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst().get();
     }
 }

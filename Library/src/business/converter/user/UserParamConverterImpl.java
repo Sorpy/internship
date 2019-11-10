@@ -20,7 +20,7 @@ public class UserParamConverterImpl implements UserParamConverter {
         user.setUsername(param.getUsername());
         user.setPassword(param.getPassword());
         user.setUserStatus(param.getUserStatus());
-        user.setID(param.getID());
+        user.setId(param.getId());
         return user;
     }
     @Override

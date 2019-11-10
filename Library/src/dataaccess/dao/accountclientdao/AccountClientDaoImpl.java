@@ -2,9 +2,6 @@ package dataaccess.dao.accountclientdao;
 
 import data.entity.AccountClient;
 
-import java.beans.IntrospectionException;
-import java.beans.PropertyDescriptor;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -17,7 +14,7 @@ import static dataaccess.dao.accountclientdao.AccountClientData.accountClientsMa
 public class AccountClientDaoImpl implements AccountClientDao {
     @Override
     public AccountClient save(AccountClient entity) {
-        accountClientsMap.putIfAbsent(entity.getID(),entity);
+        accountClientsMap.putIfAbsent(entity.getId(),entity);
         accountClients.add(entity);
         return entity;
     }
@@ -31,7 +28,7 @@ public class AccountClientDaoImpl implements AccountClientDao {
 
     @Override
     public AccountClient update(AccountClient entity) {
-        delete(entity.getID());
+        delete(entity.getId());
         accountClients.add(entity);
         return entity;
     }
@@ -87,7 +84,7 @@ public class AccountClientDaoImpl implements AccountClientDao {
     public AccountClient find(Long id) {
         return accountClients
                 .stream()
-                .filter(e -> e.getID().equals(id))
+                .filter(e -> e.getId().equals(id))
                 .findFirst().get();
     }
 }

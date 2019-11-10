@@ -8,7 +8,7 @@ public class AccountLibrarianStatusResultConverterImpl implements AccountLibrari
         AccountLibrarianStatusResult accountClientStatusResult = new AccountLibrarianStatusResult();
         accountClientStatusResult.setCode(param.getCode());
         accountClientStatusResult.setDescription(param.getDescription());
-        accountClientStatusResult.setID(param.getID());
+        accountClientStatusResult.setId(param.getId());
         accountClientStatusResult.setName(param.getName());
         return accountClientStatusResult;
     }

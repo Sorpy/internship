@@ -1,6 +1,9 @@
 package data.entity;
 
-public abstract class Account extends NamedPersistent {
+import business.converter.common.SkipField;
+
+public abstract class Account extends PersistentNamed {
+    @SkipField
     private String firstName;
     private String secondName;
     private String lastName;
